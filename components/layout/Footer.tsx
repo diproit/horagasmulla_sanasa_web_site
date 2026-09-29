@@ -31,13 +31,13 @@ export function Footer() {
               className="inline-flex items-center gap-3.5 group focus-visible:outline-2 focus-visible:outline-primary rounded-lg"
               aria-label={`${siteConfig.name} - Home`}
             >
-              <div className="relative w-12 h-12 rounded-lg overflow-hidden shrink-0 border border-white/10 shadow-sm">
+              <div className="relative w-12 h-12 rounded-full overflow-hidden shrink-0 border border-white/20 shadow-sm bg-white p-1">
                 <Image
-                  src="/images/logo.svg"
+                  src="/logo.png"
                   alt="SANASA Logo"
                   fill
                   sizes="48px"
-                  className="object-cover object-left"
+                  className="object-contain p-0.5"
                   referrerPolicy="no-referrer"
                 />
               </div>

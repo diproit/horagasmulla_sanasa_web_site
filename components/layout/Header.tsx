@@ -19,14 +19,14 @@ export function Header() {
           aria-label={`${siteConfig.name} - Home`}
         >
           {/* Circular Emblem matching screenshot style */}
-          <div className="relative w-9 h-9 sm:w-11 sm:h-11 rounded-full overflow-hidden shrink-0 border border-slate-200/80 shadow-xs ring-2 ring-primary/10">
+          <div className="relative w-9 h-9 sm:w-11 sm:h-11 rounded-full overflow-hidden shrink-0 border border-slate-200/80 shadow-xs ring-2 ring-primary/10 bg-white">
             <Image
               src="/logo.png"
               alt="SANASA Emblem"
               fill
               priority
               sizes="44px"
-              className="object-cover p-0.5"
+              className="object-contain p-0.5"
               referrerPolicy="no-referrer"
             />
           </div>

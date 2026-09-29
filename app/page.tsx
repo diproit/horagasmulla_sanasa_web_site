@@ -8,6 +8,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { StatsStrip } from "@/components/sections/StatsStrip";
 import { ServiceCardsGrid } from "@/components/sections/ServiceCard";
 import { QuoteBanner } from "@/components/sections/QuoteBanner";
+import { HeroCarousel } from "@/components/sections/HeroCarousel";
 import { homeContent } from "@/content/home";
 import { siteImages } from "@/lib/images";
 import { buildMetadata } from "@/lib/seo";
@@ -21,8 +22,7 @@ export const metadata = buildMetadata({
 });
 
 export default function HomePage() {
-  const { hero, welcome, featuredServices, awards, closingQuote } = homeContent;
-  const heroImage = siteImages["hero-building"];
+  const { welcome, featuredServices, awards, closingQuote } = homeContent;
   const bronzeAwardImage = siteImages["award-bronze"];
   const trophyAwardImage = siteImages["award-cooperative-day"];
   const bankSchema = getBankOrCreditUnionSchema();
@@ -33,85 +33,11 @@ export default function HomePage() {
       <JsonLd data={bankSchema} />
 
       {/* =========================================================================
-          1. HERO SECTION
-          Two columns on large screens (text left, photo right), stacked on phones.
-          White-to-light-blue gradient background.
-          Next.js Image with priority and explicit dimensions.
+          1. FULL-SCREEN IMMERSIVE HERO CAROUSEL
+          Showcases authentic society opening ceremony, community festivals,
+          and heritage flags with cinematic overlay and progress line indicators.
           ========================================================================= */}
-      <Section
-        background="hero"
-        spacing="spacious"
-        className="relative overflow-hidden border-b border-slate-200/80 pt-10 sm:pt-14 lg:pt-20 pb-14 sm:pb-20 lg:pb-24"
-      >
-        <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-            {/* Left Column: Headline, quote line, sub-headline, and CTAs */}
-            <div className="lg:col-span-7 flex flex-col items-start text-left">
-              {/* Quote Line / Tagline Badge */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface border border-primary/20 shadow-xs mb-5">
-                <span className="w-2 h-2 rounded-full bg-amber shrink-0 animate-pulse" aria-hidden="true" />
-                <span className="text-xs sm:text-sm font-semibold text-primary tracking-wide">
-                  &ldquo;{hero.tagline}&rdquo;
-                </span>
-              </div>
-
-              {/* H1 Primary Heading */}
-              <h1 className="text-3xl sm:text-4xl lg:text-[46px] font-bold tracking-tight text-text leading-[1.15]">
-                {hero.headline}
-              </h1>
-
-              {/* Sub-headline paragraph */}
-              <p className="mt-4 sm:mt-5 text-base sm:text-lg text-muted leading-relaxed max-w-2xl">
-                {hero.subHeadline}
-              </p>
-
-              {/* Action Buttons */}
-              <div className="mt-8 flex flex-wrap items-center gap-3.5 sm:gap-4 w-full sm:w-auto">
-                <Button
-                  href={hero.primaryCta.href}
-                  variant="primary"
-                  size="lg"
-                  className="w-full sm:w-auto shadow-md"
-                >
-                  {hero.primaryCta.label}
-                </Button>
-                <Button
-                  href={hero.secondaryCta.href}
-                  variant="outline"
-                  size="lg"
-                  className="w-full sm:w-auto"
-                >
-                  {hero.secondaryCta.label}
-                </Button>
-              </div>
-            </div>
-
-            {/* Right Column: Building entrance photo with caption & rounded corners */}
-            <div className="lg:col-span-5 flex flex-col items-center">
-              <figure className="w-full max-w-md lg:max-w-none group">
-                <div className="relative rounded-2xl overflow-hidden shadow-lg border-2 border-white bg-slate-100 ring-1 ring-slate-200/60 aspect-[4/3]">
-                  <Image
-                    src={heroImage.src}
-                    alt={heroImage.alt}
-                    width={heroImage.width}
-                    height={heroImage.height}
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 42vw"
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-102"
-                  />
-                  <div
-                    className="absolute inset-0 bg-gradient-to-t from-navy/30 via-transparent to-transparent pointer-events-none"
-                    aria-hidden="true"
-                  />
-                </div>
-                <figcaption className="mt-3 text-xs sm:text-sm text-center font-medium text-muted">
-                  {hero.imageCaption}
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-        </Container>
-      </Section>
+      <HeroCarousel />
 
       {/* =========================================================================
           2. STATS STRIP
