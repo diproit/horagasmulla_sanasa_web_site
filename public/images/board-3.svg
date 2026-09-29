@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 600" width="480" height="600">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#052352" />
+      <stop offset="100%" stop-color="#073070" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#0B63D6" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#073070" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="480" height="600" fill="url(#bg)" />
+  <rect width="480" height="600" fill="url(#glow)" />
+
+  <!-- Subtle grid pattern -->
+  <g opacity="0.06" stroke="#FFFFFF" stroke-width="1">
+    <path d="M0 0 L480 600 M480 0 L0 600" />
+    <circle cx="240" cy="300" r="160" fill="none" />
+    <circle cx="240" cy="300" r="240" fill="none" />
+  </g>
+
+  <!-- Outer frame -->
+  <rect x="12" y="12" width="456" height="576" rx="8" fill="none" stroke="#00BCD4" stroke-opacity="0.25" stroke-dasharray="6 6" />
+
+  <rect x="150" y="24" width="180" height="26" rx="13" fill="#0B63D6" />
+       <text x="240" y="41" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle" letter-spacing="1">BOARD DIRECTOR</text>
+  
+      <g fill="none" stroke="#B2EBF2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(208, 235)">
+        <circle cx="16" cy="12" r="8" />
+        <path d="M2 30c0-6 6-10 14-10s14 4 14 10" />
+      </g>
+    
+
+  <!-- Typography -->
+  <text x="240" y="330" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="20" font-weight="700" text-anchor="middle">S. K. Chandrasena Silva</text>
+  <text x="240" y="354" fill="#B2EBF2" font-family="system-ui, sans-serif" font-size="13" text-anchor="middle" font-weight="400">Director • Zonal Representative</text>
+  <text x="240" y="576" fill="#64748B" font-family="system-ui, sans-serif" font-size="11" text-anchor="middle">HORAGASMULLA SANASA • PLACEHOLDER</text>
+</svg>

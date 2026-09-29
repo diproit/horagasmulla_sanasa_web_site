@@ -1,0 +1,6 @@
+{
+  "name": "Horagasmulla SANASA",
+  "description": "Website for Dodangoda Horagasmulla SANASA Society Ltd, a cooperative bank in Dodangoda, Sri Lanka.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

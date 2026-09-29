@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0b63d6;
+  --color-primary-light: #3b82f6;
+  --color-navy: #073070;
+  --color-cyan: #00bcd4;
+  --color-cyan-pale: #b2ebf2;
+  --color-amber: #ffb300;
+  --color-amber-dark: #ffa000;
+  --color-background: #f8fafc;
+  --color-tint: #f0f6ff;
+  --color-surface: #ffffff;
+  --color-text: #1e293b;
+  --color-muted: #64748b;
+  --color-success: #2e9e5b;
+  --color-error: #d64545;
+
+  --font-sans: var(--font-poppins), Arial, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    color: #1e293b;
+    background-color: #f8fafc;
+  }
+
+  body {
+    min-height: 100vh;
+    font-family: var(--font-poppins), Arial, sans-serif;
+    color: #1e293b;
+    background-color: #f8fafc;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Accessible focus rings */
+  *:focus-visible {
+    outline: 2px solid #0b63d6;
+    outline-offset: 2px;
+  }
+}
+
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Google Translate styling overrides to prevent intrusive banners and layout shifts */
+iframe.skiptranslate,
+iframe[class*="skiptranslate"],
+iframe[class*="VIpgJd"],
+iframe[id*=":"][id*="container"],
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.VIpgJd-ZVi9od-OR94Gd-PR6tc,
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+[class*="VIpgJd-ZVi9od"],
+#goog-gt-tt,
+.goog-te-balloon-frame {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0px !important;
+  width: 0px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+html,
+body {
+  top: 0px !important;
+  position: static !important;
+  margin-top: 0px !important;
+}
+
+.goog-tooltip,
+.goog-tooltip:hover,
+#goog-gt-tt {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.goog-text-highlight {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+

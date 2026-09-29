@@ -1,0 +1,26 @@
+{
+  "name": "Dodangoda Horagasmulla SANASA Society Ltd",
+  "short_name": "Horagasmulla SANASA",
+  "description": "Save today for a better tomorrow — Trusted Cooperative Banking since 1965",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F8FAFC",
+  "theme_color": "#073070",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/apple-touch-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="iconBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#073070" />
+      <stop offset="100%" stop-color="#021636" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFC107" />
+      <stop offset="100%" stop-color="#FF9800" />
+    </linearGradient>
+  </defs>
+  
+  <!-- App Icon Background -->
+  <rect width="512" height="512" rx="112" fill="url(#iconBg)" />
+  
+  <!-- Outer Ring -->
+  <circle cx="256" cy="256" r="208" fill="none" stroke="#00A3E0" stroke-width="16" opacity="0.9" />
+  
+  <!-- Middle Ring Disc -->
+  <circle cx="256" cy="256" r="176" fill="#0B63D6" />
+  
+  <!-- Inner Detail Ring -->
+  <circle cx="256" cy="256" r="150" fill="none" stroke="#E0F7FA" stroke-width="4" stroke-dasharray="12 8" />
+
+  <!-- SANASA Cooperative Pillar / Building Emblem -->
+  <path d="M152 256 L256 168 L360 256 V352 A24 24 0 0 1 336 376 H176 A24 24 0 0 1 152 352 Z" fill="url(#goldGrad)" />
+  
+  <!-- Pillar / Entrance Doors -->
+  <rect x="224" y="272" width="64" height="104" rx="8" fill="#073070" />
+  
+  <!-- Cooperative Beacon / Crown -->
+  <circle cx="256" cy="128" r="28" fill="#E0F7FA" />
+</svg>
