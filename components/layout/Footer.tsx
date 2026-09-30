@@ -23,7 +23,7 @@ export function Footer() {
     <footer className="bg-navy text-slate-300 border-t border-white/10 select-none">
       {/* Main 4-column footer body */}
       <div className="py-12 sm:py-16 lg:py-20">
-        <Container className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 px-4 sm:px-6 lg:px-8">
+        <Container className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
           {/* (a) Brand Block (5 cols on lg) */}
           <div className="lg:col-span-5 space-y-5">
             <Link
@@ -184,7 +184,7 @@ export function Footer() {
 
       {/* (d) Bottom Bar */}
       <div className="border-t border-white/10 py-5 bg-navy/95">
-        <Container className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400 text-center sm:text-left px-4 sm:px-6 lg:px-8">
+        <Container className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400 text-center sm:text-left">
           <p>{siteConfig.copyright}</p>
           <p className="text-cyan-pale/90 hover:text-amber transition-colors font-medium">
             {siteConfig.credit}

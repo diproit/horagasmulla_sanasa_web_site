@@ -8,7 +8,7 @@ export function TopBar() {
 
   return (
     <div className="bg-navy border-b border-white/10 text-white text-xs select-none">
-      <Container className="flex items-center justify-between h-9 px-4 sm:px-6 lg:px-8">
+      <Container className="flex items-center justify-between h-9">
         {/* Left: Contact Details with Icons matching photo layout */}
         <div className="flex items-center gap-4 sm:gap-6 overflow-x-auto no-scrollbar">
           {/* Office Phone */}

@@ -8,3 +8,5 @@ export * from "./QuoteBanner";
 export * from "./FAQ";
 export * from "./BenefitList";
 export * from "./InfoBlock";
+export * from "./HeroCarousel";
+export * from "./WelcomeStats";

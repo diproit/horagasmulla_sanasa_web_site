@@ -11,7 +11,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-slate-200/90 shadow-2xs transition-shadow duration-200">
       {/* Top Header Row */}
-      <Container className="flex items-center justify-between h-16 sm:h-20 px-3 sm:px-6 lg:px-8">
+      <Container className="flex items-center justify-between h-16 sm:h-20">
         {/* Brand: Circular Emblem Logo & Bank Name */}
         <Link
           href="/"

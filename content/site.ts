@@ -24,6 +24,11 @@ export interface SiteConfig {
   credit: string;
   copyright: string;
   navigation: NavItem[];
+  introVideo: {
+    videoId: string;
+    title: string;
+    embedUrl: string;
+  };
 }
 
 export const siteConfig: SiteConfig = {
@@ -46,6 +51,11 @@ export const siteConfig: SiteConfig = {
   },
   credit: "Site by RAJIDA © 2026",
   copyright: "© 2026 Dodangoda Horagasmulla SANASA. All Rights Reserved.",
+  introVideo: {
+    videoId: "CERU8swEdqw",
+    title: "Dodangoda Horagasmulla SANASA – Introduction video",
+    embedUrl: "https://www.youtube-nocookie.com/embed/CERU8swEdqw",
+  },
   navigation: [
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about-us" },

@@ -5,11 +5,13 @@ import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { StatsStrip } from "@/components/sections/StatsStrip";
 import { ServiceCardsGrid } from "@/components/sections/ServiceCard";
 import { QuoteBanner } from "@/components/sections/QuoteBanner";
 import { HeroCarousel } from "@/components/sections/HeroCarousel";
+import { StatsStrip } from "@/components/sections/StatsStrip";
+import { YouTubeFacade } from "@/components/ui/YouTubeFacade";
 import { homeContent } from "@/content/home";
+import { siteConfig } from "@/content/site";
 import { siteImages } from "@/lib/images";
 import { buildMetadata } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -40,34 +42,74 @@ export default function HomePage() {
       <HeroCarousel />
 
       {/* =========================================================================
-          2. STATS STRIP
+          2. TRUSTBAR / STATS STRIP
           Key metrics showcasing assets, membership, account holders, and history.
+          Kept separate as a distinct section between Hero and Welcome.
           ========================================================================= */}
       <StatsStrip />
 
       {/* =========================================================================
-          3. WELCOME SECTION
-          H2 "Welcome to Dodangoda Horagasmulla SANASA Bank"
-          Sub-heading "Uplifting Rural Lives & Communities"
-          Three structured paragraphs detailing history, governance, and community CSR.
+          3. WELCOME SECTION (Two-Column Split + Embedded Video Facade)
+          - Centered top pill badge "Welcome"
+          - Left column: H2, royal-blue sub-heading, 3 paragraphs, "Our Story" button
+          - Right column: 16:9 YouTube video facade with click-to-load play button
           ========================================================================= */}
-      <Section background="surface" spacing="default" className="border-b border-slate-200/80">
-        <Container className="max-w-4xl mx-auto">
-          <SectionHeading
-            heading={welcome.heading}
-            subText={welcome.subHeading}
-            align="center"
-            withAmberBar
-            className="mb-8 sm:mb-10"
-          />
+      <Section
+        background="default"
+        spacing="none"
+        className="bg-white border-b border-slate-200/80 py-12 sm:py-14 lg:py-24"
+      >
+        <Container>
+          {/* 1. Top Badge: small centered pill label */}
+          <div className="flex justify-center mb-8 sm:mb-12">
+            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-slate-200 bg-white shadow-2xs">
+              <span className="w-2 h-2 rounded-full bg-amber shrink-0" aria-hidden="true" />
+              <span className="text-xs sm:text-sm font-medium text-navy tracking-wide">
+                Welcome
+              </span>
+            </div>
+          </div>
 
-          <div className="bg-background rounded-2xl p-6 sm:p-10 border border-slate-200/80 shadow-xs space-y-5 text-base sm:text-lg text-text/90 leading-relaxed">
-            {welcome.paragraphs.map((paragraph, index) => (
-              <p key={index} className="flex items-start gap-3">
-                <span className="w-2 h-2 rounded-full bg-primary mt-2.5 shrink-0 hidden sm:inline-block" aria-hidden="true" />
-                <span>{paragraph}</span>
+          {/* 2. Two-column split on desktop (lg and above), stacked below lg */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 items-center">
+            {/* Left Column (Text & Button) */}
+            <div className="lg:col-span-6 flex flex-col items-start text-left">
+              {/* H2 Heading */}
+              <h2 className="text-2xl sm:text-3xl lg:text-[40px] xl:text-[42px] font-bold text-navy tracking-tight leading-[1.18] sm:leading-[1.16]">
+                {welcome.heading}
+              </h2>
+
+              {/* Sub-heading as semibold royal-blue paragraph */}
+              <p className="mt-2.5 sm:mt-3 text-base sm:text-lg lg:text-xl font-semibold text-primary">
+                {welcome.subHeading}
               </p>
-            ))}
+
+              {/* Three welcome paragraphs */}
+              <div className="mt-5 sm:mt-6 space-y-4 text-[16px] sm:text-[17px] text-[#64748B] leading-[1.7]">
+                {welcome.paragraphs.map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
+              </div>
+
+              {/* Solid navy pill-shaped button */}
+              <div className="mt-8 sm:mt-10">
+                <Link
+                  href="/about-us"
+                  className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#073070] hover:bg-[#0c439c] active:bg-[#052352] text-white font-bold text-sm sm:text-base shadow-sm hover:shadow transition-all duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#073070] cursor-pointer"
+                >
+                  Our Story
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Column (Expanded Video Frame) */}
+            <div className="lg:col-span-6 flex flex-col items-center justify-center w-full">
+              <YouTubeFacade
+                videoId={siteConfig.introVideo.videoId}
+                title={siteConfig.introVideo.title}
+                className="w-full shadow-2xl"
+              />
+            </div>
           </div>
         </Container>
       </Section>

@@ -4,3 +4,4 @@ export * from "./Section";
 export * from "./SectionHeading";
 export * from "./Card";
 export * from "./ImageWithAlt";
+export * from "./YouTubeFacade";

@@ -233,7 +233,7 @@ export function HeroCarousel({
                 </div>
 
                 {/* Primary Hero Headline */}
-                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12] drop-shadow-md">
+                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-medium text-white tracking-tight leading-[1.12] drop-shadow-md">
                   {slide.title}
                 </h1>
 
