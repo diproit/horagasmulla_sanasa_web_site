@@ -244,14 +244,14 @@ export default function AboutUsPage() {
             <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
               {/* Award Card 1: Centenary Bronze Plaque */}
               <article className="group bg-surface rounded-2xl border border-slate-200/90 overflow-hidden shadow-xs hover:shadow-md transition-all duration-200 flex flex-col">
-                <div className="relative aspect-square bg-slate-50 overflow-hidden border-b border-slate-100 flex items-center justify-center p-4">
+                <div className="relative aspect-square bg-slate-50 overflow-hidden border-b border-slate-100">
                   <Image
                     src={bronzeAwardImage.src}
                     alt={bronzeAwardImage.alt}
                     width={bronzeAwardImage.width}
                     height={bronzeAwardImage.height}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                   <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-amber text-text shadow-xs">
                     <Award className="w-3.5 h-3.5" aria-hidden="true" />
@@ -273,14 +273,14 @@ export default function AboutUsPage() {
 
               {/* Award Card 2: International Cooperative Day Trophy */}
               <article className="group bg-surface rounded-2xl border border-slate-200/90 overflow-hidden shadow-xs hover:shadow-md transition-all duration-200 flex flex-col">
-                <div className="relative aspect-square bg-slate-50 overflow-hidden border-b border-slate-100 flex items-center justify-center p-4">
+                <div className="relative aspect-square bg-slate-50 overflow-hidden border-b border-slate-100">
                   <Image
                     src={trophyAwardImage.src}
                     alt={trophyAwardImage.alt}
                     width={trophyAwardImage.width}
                     height={trophyAwardImage.height}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                   <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-primary text-white shadow-xs">
                     <Trophy className="w-3.5 h-3.5" aria-hidden="true" />
