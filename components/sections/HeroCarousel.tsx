@@ -31,8 +31,8 @@ export interface HeroSlide {
 const HERO_SLIDES: HeroSlide[] = [
   {
     id: "bank",
-    image: "/images/hero/web L/hero-bank.webp",
-    tabletImage: "/images/hero/web L/2.webp",
+    image: "/images/hero/Web L/hero-bank.webp",
+    tabletImage: "/images/hero/Web T/2.webp",
     mobileImage: "/images/hero/Web M/2.webp",
     alt: "Dodangoda Horagasmulla SANASA Bank Main Building",
     tag: "MODERN COOPERATIVE BANKING • EST. 1965",
@@ -51,7 +51,7 @@ const HERO_SLIDES: HeroSlide[] = [
   {
     id: "mobile-app",
     image: "/images/hero/web L/hero-mobile-app1.webp",
-    tabletImage: "/images/hero/web L/3.webp",
+    tabletImage: "/images/hero/web T/3.webp",
     mobileImage: "/images/hero/Web M/3.webp",
     alt: "SANASA Mobile Banking App for Balance Inquiry, Bill Payments, and Loan Applications",
     tag: "DIGITAL & MOBILE BANKING",
@@ -70,7 +70,7 @@ const HERO_SLIDES: HeroSlide[] = [
   {
     id: "digital-passbook",
     image: "/images/hero/web L/hero-digital-passbook1.webp",
-    tabletImage: "/images/hero/web L/5.webp",
+    tabletImage: "/images/hero/web T/5.webp",
     mobileImage: "/images/hero/Web M/4.webp",
     alt: "SANASA Digital Passbook for Real-Time Account Statements and Savings Tracking",
     tag: "PAPERLESS DIGITAL PASSBOOK",
