@@ -28,21 +28,9 @@ export interface FeaturedServiceCard {
 
 export interface HomeAwardsContent {
   heading: string;
-  subHeading: string;
-  featureSubHeading: string;
-  paragraph: string;
-  centenaryAward: {
-    title: string;
-    description: string;
-  };
-  cooperativeDayAward: {
-    title: string;
-    description: string;
-  };
-  viewMoreLink: {
-    label: string;
-    href: string;
-  };
+  subText: string;
+  buttonText: string;
+  buttonHref: string;
 }
 
 export interface HomeContent {
@@ -115,24 +103,9 @@ export const homeContent: HomeContent = {
   },
   awards: {
     heading: "Awards & Achievements",
-    subHeading: "Official recognition of our performance",
-    featureSubHeading: "Proven Excellence in Cooperative Governance",
-    paragraph:
-      "Our consistent financial management, transparency, and service quality have been recognized by the Department of Cooperative Development and national cooperative federations.",
-    centenaryAward: {
-      title: "National Centenary Bronze Award 2018",
-      description:
-        "Awarded Bronze in the National Cooperative Excellence Competition for exemplary performance, strict audit compliance, and robust democratic governance.",
-    },
-    cooperativeDayAward: {
-      title: "Cooperative Day Trophy",
-      description:
-        "Recognized on International Co-operative Day for dedicated community leadership, thrift promotion, and member support initiatives.",
-    },
-    viewMoreLink: {
-      label: "View More",
-      href: "/about-us#awards",
-    },
+    subText: "7 trophies in cricket, netball, volleyball and drama",
+    buttonText: "View All Awards",
+    buttonHref: "/about-us#awards",
   },
   closingQuote: {
     quote: "A happy family, a prosperous village, is the Sanasa wish",

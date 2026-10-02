@@ -13,6 +13,13 @@ export type ImageKey =
   | "main-office"
   | "award-bronze"
   | "award-cooperative-day"
+  | "award-1"
+  | "award-2"
+  | "award-3"
+  | "award-4"
+  | "award-5"
+  | "award-6"
+  | "award-7"
   | "facility-counter"
   | "facility-computer"
   | "facility-office"
@@ -26,7 +33,10 @@ export type ImageKey =
   | "board-4"
   | "board-5"
   | "board-6"
-  | "board-7";
+  | "board-7"
+  | "staff-1"
+  | "staff-2"
+  | "staff-3";
 
 export const siteImages: Record<ImageKey, SiteImage> = {
   logo: {
@@ -49,25 +59,68 @@ export const siteImages: Record<ImageKey, SiteImage> = {
     height: 630,
   },
   "main-office": {
-    src: "/images/main-office.svg",
+    src: "/images/main-office.jpg",
     alt: "Main Office Entrance of Dodangoda Horagasmulla SANASA Society Ltd",
     width: 800,
     height: 600,
     caption: "Main Office Entrance",
   },
   "award-bronze": {
-    src: "/images/award-bronze.svg",
-    alt: "National Centenary Bronze Award 2018 Plaque",
+    src: "/images/award-bronze.jpg",
+    alt: "Cooperative tournament trophy photo",
     width: 600,
     height: 600,
-    caption: "Centenary Bronze Plaque (2018)",
+    caption: "Cooperative tournament trophy",
   },
   "award-cooperative-day": {
-    src: "/images/award-cooperative-day.svg",
-    alt: "International Cooperative Day Recognition Trophy",
+    src: "/images/award-cooperative-day.jpg",
+    alt: "Cooperative tournament recognition trophy",
     width: 600,
     height: 600,
-    caption: "International Cooperative Day Trophy",
+    caption: "Cooperative tournament trophy",
+  },
+  // TEMPORARY: replace each award-N path with its real trophy photo (public/images/award-N.jpg) when available.
+  "award-1": {
+    src: "/images/awards/award-1.jpeg",
+    alt: "Trophy won at the 2026 cricket tournament organized by Panadura SANASA",
+    width: 300,
+    height: 300,
+  },
+  "award-2": {
+    src: "/images/awards/award-2.jpeg",
+    alt: "Trophies won at the 2025 cricket tournament organized by Panadura SANASA",
+    width: 300,
+    height: 300,
+  },
+  "award-3": {
+    src: "/images/awards/award-3.jpeg",
+    alt: "Trophy won at the 2024 cricket tournament organized by Panadura SANASA",
+    width: 300,
+    height: 300,
+  },
+  "award-4": {
+    src: "/images/awards/award-4.jpeg",
+    alt: "Trophy won at the 2018 Soma Mathararachchi Memorial Cricket Tournament",
+    width: 300,
+    height: 300,
+  },
+  "award-5": {
+    src: "/images/awards/award-5.jpeg",
+    alt: "Award plaque for third place in drama at the 2018 National Children's Festival",
+    width: 300,
+    height: 300,
+  },
+  "award-6": {
+    src: "/images/awards/award-6.jpeg",
+    alt: "Trophies won for Netball and Volleyball at the 95th Cooperative Day celebrations in 2017",
+    width: 300,
+    height: 300,
+  },
+  "award-7": {
+    src: "/images/awards/award-7.jpeg",
+    alt: "Trophies won at the Kalutara District Cooperative Board cricket tournament",
+    width: 300,
+    height: 300,
   },
   "facility-counter": {
     src: "/images/facility-counter.svg",
@@ -119,53 +172,72 @@ export const siteImages: Record<ImageKey, SiteImage> = {
     caption: "Senior Appreciation — Honoring our founding senior members",
   },
   "board-1": {
-    src: "/images/board-1.svg",
-    alt: "Portrait of K. A. Bandara Jayasinghe, Hon. Chairman / Board Leader",
+    src: "/images/bord/board-1.jpeg",
+    alt: "Chaminda Veerapperuma, Hon. Chairman / Board Leader",
     width: 480,
-    height: 600,
+    height: 700,
     caption: "Hon. Chairman / Board Leader",
   },
   "board-2": {
-    src: "/images/board-2.svg",
-    alt: "Portrait of M. D. Nimal Perera, Director",
+    src: "/images/bord/board-2.png",
+    alt: "J . L Salomi Chanchala, Hon. Deputy Chairman",
     width: 480,
-    height: 600,
-    caption: "Director",
+    height: 480,
+    caption: "Hon. Deputy Chairman",
   },
   "board-3": {
-    src: "/images/board-3.svg",
-    alt: "Portrait of S. K. Chandrasena Silva, Director",
+    src: "/images/bord/board-3.png",
+    alt: "W . K . A. Dilhani Damayanthi, Hon. Secretary",
     width: 480,
-    height: 600,
-    caption: "Director",
+    height: 480,
+    caption: "Hon. Secretary",
   },
   "board-4": {
-    src: "/images/board-4.svg",
-    alt: "Portrait of W. M. Premawathi Wickramasinghe, Director",
+    src: "/images/bord/board-4.png",
+    alt: "R. Amara, Member",
     width: 480,
-    height: 600,
-    caption: "Director",
+    height: 480,
+    caption: "Member",
   },
   "board-5": {
-    src: "/images/board-5.svg",
-    alt: "Portrait of D. L. Somapala Ranatunga, Director",
+    src: "/images/bord/board-5.png",
+    alt: "L . H .Manjula Malkanthi, Member",
     width: 480,
-    height: 600,
-    caption: "Director",
+    height: 480,
+    caption: "Member",
   },
   "board-6": {
-    src: "/images/board-6.svg",
-    alt: "Portrait of R. P. Sarath Gunawardena, Director",
+    src: "/images/bord/board-6.png",
+    alt: "W . G .Chathuranga Lakmal, Member",
     width: 480,
-    height: 600,
-    caption: "Director",
+    height: 480,
+    caption: "Member",
   },
   "board-7": {
-    src: "/images/board-7.svg",
-    alt: "Portrait of H. M. Anura Senanayake, Director",
+    src: "/images/bord/board-7.png",
+    alt: "M . M .Jagath Pushpakumara, Member",
     width: 480,
-    height: 600,
-    caption: "Director",
+    height: 480,
+    caption: "Member",
+  },
+  // Replace with real photos (public/images/staff-1.jpg etc.) when available.
+  "staff-1": {
+    src: "/images/staff/staff-1.png",
+    alt: "S . D. Nadeeka Kumuduni, Manager",
+    width: 400,
+    height: 400,
+  },
+  "staff-2": {
+    src: "/images/staff/staff-2.png",
+    alt: "S . Saduni Ruwanthika, Assistant Manager",
+    width: 400,
+    height: 400,
+  },
+  "staff-3": {
+    src: "/images/staff/staff-3.png",
+    alt: "P . Chamari Lakmini, Assistant Manager",
+    width: 400,
+    height: 400,
   },
 };
 

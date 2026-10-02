@@ -40,8 +40,12 @@ function WelcomeCountUpStat({ item }: WelcomeCountUpStatProps) {
             const easeOutProgress = 1 - Math.pow(1 - progress, 3);
             const currentVal = Math.floor(easeOutProgress * target);
 
-            const suffix = item.suffix || "";
-            setDisplay(`${currentVal}${suffix}`);
+            if (item.id === "total-assets") {
+              setDisplay(`Rs. ${currentVal} Million`);
+            } else {
+              const suffix = item.suffix || "";
+              setDisplay(`${currentVal}${suffix}`);
+            }
 
             if (progress < 1) {
               requestAnimationFrame(updateCount);

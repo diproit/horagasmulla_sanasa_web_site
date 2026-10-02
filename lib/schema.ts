@@ -1,4 +1,5 @@
 import { BASE_SITE_URL, SITE_NAME, HOME_TITLE, DEFAULT_DESCRIPTION } from "./seo";
+import { awards } from "@/content/awards";
 
 export interface BreadcrumbItem {
   name: string;
@@ -119,6 +120,7 @@ export function getBankOrCreditUnionSchema(
     parentOrganization: {
       "@id": `${baseUrl}/#organization`,
     },
+    award: awards.map((a) => (a.year ? `${a.year} ${a.title}` : a.title)),
   };
 }
 
