@@ -54,7 +54,7 @@ export const contactContent: ContactPageContent = {
     subText: "Reach out to our staff for any inquiries, savings plans, or loan support",
   },
   getInTouch: {
-    heading: "Get In Touch",
+    heading: "Dodangoda Horagasmulla SANASA Society Ltd.",
     subText: "We are here to assist our members and visitors with trusted cooperative services.",
   },
   managerWhatsApp: {
