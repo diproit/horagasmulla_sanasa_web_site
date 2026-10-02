@@ -8,7 +8,7 @@
 | Page | URL Path | Page Title (50–65 chars) | Meta Description (140–160 chars) | Primary H1 | Primary Keyword |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Home** | `/` | `Dodangoda Horagasmulla SANASA Society Ltd — Trusted Cooperative Banking since 1965` (76 chars) | `Dodangoda Horagasmulla SANASA Society Ltd offers secure savings, agricultural and microfinance loans, and community welfare projects in Dodangoda since 1965.` (158 chars) | `Your Trusted Cooperative Banking Partner in Dodangoda` | `Sanasa Bank` |
-| **About Us** | `/about-us` | `About Us — Dodangoda Horagasmulla SANASA Society Ltd` (54 chars) | `Discover Dodangoda Horagasmulla SANASA Society Ltd: 60+ years of cooperative banking, Rs. 1 Billion assets, 600 members, verified awards, and modern facilities.` (160 chars) | `About Us` | `cooperative bank legacy` |
+| **About Us** | `/about-us` | `About Us — Dodangoda Horagasmulla SANASA Society Ltd` (54 chars) | `Discover Dodangoda Horagasmulla SANASA Society Ltd: 60+ years of cooperative banking, Rs. 400 Million assets, 750+ members, 7 trophies in cricket, netball, volleyball and drama, and modern facilities.` (189 chars) | `About Us` | `cooperative bank legacy` |
 | **Our Services** | `/services` | `Our Services — Dodangoda Horagasmulla SANASA Society Ltd` (57 chars) | `Explore cooperative banking at Horagasmulla SANASA: secure savings plans, low-interest agricultural and housing loans, and community welfare programs.` (150 chars) | `Our Services` | `cooperative savings Dodangoda` |
 | **Membership** | `/membership` | `Membership — Dodangoda Horagasmulla SANASA Society Ltd` (55 chars) | `Join Horagasmulla SANASA: explore equal member ownership, annual dividend payouts, concessionary loan rates, and decentralized grassroots zonal governance.` (157 chars) | `Membership` | `Sanasa Bank membership` |
 | **Management** | `/management` | `Management — Dodangoda Horagasmulla SANASA Society Ltd` (55 chars) | `Meet the democratically elected Board of Directors and leadership of Horagasmulla SANASA Society Ltd, dedicated to transparency, integrity, and community trust.` (161 chars) | `Management` | `Board of Directors Horagasmulla` |
@@ -28,7 +28,7 @@
   - `/contact`: PageBanner H1 "Contact Us"
   - `not-found.tsx`: H1 "Oops! We couldn't find that page"
 - [x] **Zero skipped heading levels**:
-  - H1 &rarr; H2 (Section headings) &rarr; H3 (Cards / Subsection blocks) &rarr; H4 (nested items).
+  - H1 &rarr; H2 (Section headings, including "Our Management Team" on `/management`) &rarr; H3 (Cards / Subsection blocks) &rarr; H4 (nested items).
   - Quotes, decorative callouts, and stats use semantic `<blockquote>`, `<span>`, or visually hidden `<h2 className="sr-only">`.
 
 ---
@@ -82,7 +82,7 @@ Every inner page links onward to at least two other relevant pages:
   3. Inverted breadcrumbs link to `/` (Home)
 - **Management (`/management`)**:
   1. Links to `/membership` ("Join As a Member")
-  2. Links to `/contact` ("Contact Branch Office")
+  2. Links to `/contact` ("Contact Branch Office", "Contact our office")
   3. Inverted breadcrumbs link to `/` (Home)
 - **Contact Us (`/contact`)**:
   1. Links to `/services` ("View Financial Services")

@@ -7,3 +7,4 @@ export * from "./services";
 export * from "./membership";
 export * from "./management";
 export * from "./faqs";
+export * from "./awards";

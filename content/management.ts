@@ -30,11 +30,25 @@ export interface ManagementPageContent {
     subText: string;
     members: BoardMember[];
   };
+  managementTeam: {
+    heading: string;
+    subText: string;
+    intro: string;
+    staff: StaffMember[];
+  };
   principles: {
     heading: string;
     subText: string;
     items: CooperativePrinciple[];
   };
+}
+
+export interface StaffMember {
+  id: string;
+  name: string;
+  role: "Manager" | "Assistant Manager";
+  imageKey: string;
+  imageAlt: string;
 }
 
 export const managementContent: ManagementPageContent = {
@@ -49,7 +63,7 @@ export const managementContent: ManagementPageContent = {
     paragraphs: [
       "The society operates under a progressive Board of Directors framework, firmly rooted in transparency and direct accountability to all general members.",
       "The Board is democratically elected directly from our defined geographical zones. This guarantees that every local neighborhood has a dedicated representative to present local financial priorities, evaluate loan applications, and coordinate community welfare schemes.",
-      "Meeting on a regular monthly basis, the Board of Directors oversees operational policy, verifies regulatory audit compliance, and safeguards the sustainable growth of our collective cooperative assets.",
+      "Meeting on a regular monthly basis, the Board of Directors oversees operational policy, verifies statutory audit compliance, and safeguards the sustainable growth of our collective cooperative assets.",
     ],
   },
   board: {
@@ -58,7 +72,7 @@ export const managementContent: ManagementPageContent = {
     members: [
       {
         id: "board-1",
-        name: "K. A. Bandara Jayasinghe (Demo)",
+        name: "Chaminda Veerapperuma",
         role: "Hon. Chairman / Board Leader",
         isChairman: true,
         imageKey: "board-1",
@@ -66,45 +80,77 @@ export const managementContent: ManagementPageContent = {
       },
       {
         id: "board-2",
-        name: "M. D. Nimal Perera (Demo)",
-        role: "Director",
+        name: "J . L Salomi Chanchala",
+        role: "Hon. Deputy Chairman",
         imageKey: "board-2",
         bio: "Elected zonal representative overseeing local thrift mobilization and agricultural credit facilities.",
       },
       {
         id: "board-3",
-        name: "S. K. Chandrasena Silva (Demo)",
-        role: "Director",
+        name: "W . K . A. Dilhani Damayanthi",
+        role: "Hon. Secretary",
         imageKey: "board-3",
         bio: "Dedicated director representing zonal interests with a focus on member welfare and small business development.",
       },
       {
         id: "board-4",
-        name: "W. M. Premawathi Wickramasinghe (Demo)",
-        role: "Director",
+        name: "R. Amara",
+        role: "Member",
         imageKey: "board-4",
         bio: "Championing women's savings circles, micro-enterprise empowerment, and community welfare programs.",
       },
       {
         id: "board-5",
-        name: "D. L. Somapala Ranatunga (Demo)",
-        role: "Director",
+        name: "L . H .Manjula Malkanthi",
+        role: "Member",
         imageKey: "board-5",
         bio: "Overseeing housing and renovation loan reviews and member welfare assistance initiatives.",
       },
       {
         id: "board-6",
-        name: "R. P. Sarath Gunawardena (Demo)",
-        role: "Director",
+        name: "W . G .Chathuranga Lakmal",
+        role: "Member",
         imageKey: "board-6",
         bio: "Active board member coordinating environmental CSR campaigns and youth financial education programs.",
       },
       {
         id: "board-7",
-        name: "H. M. Anura Senanayake (Demo)",
-        role: "Director",
+        name: "M . M .Jagath Pushpakumara",
+        role: "Member",
         imageKey: "board-7",
         bio: "Guiding operational modernization, digital bookkeeping audit standards, and member relations.",
+      },
+    ],
+  },
+  managementTeam: {
+    heading: "Our Management Team",
+    subText: "The professional team that runs our daily banking operations",
+    intro:
+      "Our Manager and Assistant Managers work hand in hand with the elected Board of Directors, serving members with care, transparency and trust every day.",
+    // NOTE: To replace staff names and photos later: update the names above and replace public/images/staff-N.svg with real photos (public/images/staff-N.jpg) in lib/images.ts.
+    staff: [
+      {
+        id: "staff-1",
+        name: "S . D. Nadeeka Kumuduni",
+        role: "Manager",
+        imageKey: "staff-1",
+        imageAlt: "Portrait of K. P. Nuwan Jayawardena (Demo), Manager",
+      },
+      {
+        id: "staff-2",
+        name: "S . Saduni Ruwanthika",
+        role: "Assistant Manager",
+        imageKey: "staff-2",
+        imageAlt:
+          "Portrait of H. M. Sanduni Wickramasinghe (Demo), Assistant Manager",
+      },
+      {
+        id: "staff-3",
+        name: "P . Chamari Lakmini",
+        role: "Assistant Manager",
+        imageKey: "staff-3",
+        imageAlt:
+          "Portrait of D. M. Kasun Rajapaksha (Demo), Assistant Manager",
       },
     ],
   },

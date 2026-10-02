@@ -43,7 +43,7 @@ const HERO_SLIDES: HeroSlide[] = [
   },
   {
     id: "mobile-app",
-    image: "/images/hero/hero-mobile-app.webp",
+    image: "/images/hero/hero-mobile-app1.webp",
     alt: "SANASA Mobile Banking App for Balance Inquiry, Bill Payments, and Loan Applications",
     tag: "DIGITAL & MOBILE BANKING",
     title: "Mobile Banking at Your Fingertips",
@@ -60,7 +60,7 @@ const HERO_SLIDES: HeroSlide[] = [
   },
   {
     id: "digital-passbook",
-    image: "/images/hero/hero-digital-passbook.webp",
+    image: "/images/hero/hero-digital-passbook1.webp",
     alt: "SANASA Digital Passbook for Real-Time Account Statements and Savings Tracking",
     tag: "PAPERLESS DIGITAL PASSBOOK",
     title: "Your Passbook, Now Fully Digital",
@@ -194,12 +194,12 @@ export function HeroCarousel({
               >
 
                 {/* Primary Hero Headline */}
-                <h1 className="text-3xl sm:text-5xl lg:text-5xl font-medium text-white tracking-tight leading-[1.12] drop-shadow-md max-w-[600px]">
+                <h1 className="text-3xl sm:text-5xl lg:text-5xl font-medium text-[#04126e] tracking-normal leading-[1.12] drop-shadow-md max-w-[600px]">
                   {slide.title}
                 </h1>
 
                 {/* Sub-headline description */}
-                <p className="mt-4 sm:mt-5 text-base sm:text-lg lg:text-xl text-slate-200 leading-relaxed max-w-2xl font-normal drop-shadow-xs">
+                <p className="mt-4 sm:mt-5 text-base sm:text-lg lg:text-xl text-[#666565] leading-relaxed max-w-2xl font-normal drop-shadow-xs">
                   {slide.subtitle}
                 </p>
 

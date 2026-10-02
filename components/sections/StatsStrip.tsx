@@ -41,8 +41,12 @@ function CountUpStat({ item }: CountUpStatProps) {
             const easeOutProgress = 1 - Math.pow(1 - progress, 3);
             const currentVal = Math.floor(easeOutProgress * target);
 
-            const suffix = item.suffix || "";
-            setDisplay(`${currentVal}${suffix}`);
+            if (item.id === "total-assets") {
+              setDisplay(`Rs. ${currentVal} Million`);
+            } else {
+              const suffix = item.suffix || "";
+              setDisplay(`${currentVal}${suffix}`);
+            }
 
             if (progress < 1) {
               requestAnimationFrame(updateCount);
@@ -78,11 +82,6 @@ function CountUpStat({ item }: CountUpStatProps) {
       <span className="mt-2 text-xs sm:text-sm font-semibold tracking-wider text-cyan-pale uppercase">
         {item.label}
       </span>
-      {item.description && (
-        <span className="mt-1 text-xs text-slate-300/80 max-w-[200px] hidden sm:block">
-          {item.description}
-        </span>
-      )}
     </div>
   );
 }

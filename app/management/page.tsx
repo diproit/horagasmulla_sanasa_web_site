@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   Vote,
   ShieldCheck,
@@ -43,10 +44,13 @@ export const metadata = buildMetadata({
  */
 
 export default function ManagementPage() {
-  const { banner, governance, board, principles } = managementContent;
+  const { banner, governance, board, managementTeam, principles } = managementContent;
 
   const chairman = board.members.find((m) => m.isChairman) || board.members[0];
   const directors = board.members.filter((m) => !m.isChairman);
+
+  const manager = managementTeam.staff.find((s) => s.role === "Manager") || managementTeam.staff[0];
+  const assistantManagers = managementTeam.staff.filter((s) => s.role !== "Manager");
 
   // Schema.org Structured Data
   const breadcrumbSchema = getBreadcrumbSchema([
@@ -151,32 +155,24 @@ export default function ManagementPage() {
                     alt={`Portrait of ${chairman.name}, Hon. Chairman / Board Leader`}
                     width={siteImages[chairman.imageKey as ImageKey].width}
                     height={siteImages[chairman.imageKey as ImageKey].height}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover  transition-transform duration-300"
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center bg-tint text-primary font-bold">
                     {chairman.name}
                   </div>
                 )}
-                <span className="absolute bottom-2.5 left-2.5 right-2.5 text-center px-2 py-1 rounded-md text-[11px] font-bold uppercase tracking-wider bg-navy/90 text-amber backdrop-blur-xs">
-                  Hon. Chairman
-                </span>
               </div>
 
               {/* Chairman Details */}
               <div className="flex-1 text-center md:text-left space-y-3">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tint text-primary text-xs font-bold uppercase tracking-wider">
-                  <Award className="w-3.5 h-3.5" aria-hidden="true" />
-                  <span>Hon. Chairman</span>
-                </div>
-
                 <h3 className="text-xl sm:text-2xl font-bold text-text group-hover:text-primary transition-colors leading-snug">
                   {chairman.name}
                 </h3>
 
                 {/* Role label "Board Leader" in royal blue */}
                 <p className="text-sm sm:text-base font-bold text-primary">
-                  Board Leader
+                  Hon. Chairman
                 </p>
 
                 {chairman.bio && (
@@ -189,14 +185,14 @@ export default function ManagementPage() {
           </div>
 
           {/* 6 Director Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-6xl mx-auto">
             {directors.map((director) => (
               <article
                 key={director.id}
                 className="group bg-background rounded-2xl border border-slate-200/90 overflow-hidden shadow-xs hover:shadow-md hover:border-primary/40 transition-all duration-200 flex flex-col"
               >
                 {/* Director Photo Header */}
-                <div className="relative aspect-[4/3] bg-slate-100 overflow-hidden border-b border-slate-100">
+                <div className="relative aspect-[4/4] bg-slate-100 overflow-hidden border-b border-slate-100">
                   {siteImages[director.imageKey as ImageKey] ? (
                     <Image
                       src={siteImages[director.imageKey as ImageKey].src}
@@ -204,17 +200,13 @@ export default function ManagementPage() {
                       width={siteImages[director.imageKey as ImageKey].width}
                       height={siteImages[director.imageKey as ImageKey].height}
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover transition-transform duration-300"
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center bg-slate-100 text-muted">
                       {director.name}
                     </div>
                   )}
-
-                  <span className="absolute top-3 left-3 px-2.5 py-1 rounded-md text-xs font-semibold uppercase tracking-wider bg-navy/85 text-cyan-pale backdrop-blur-xs border border-cyan/20">
-                    Director
-                  </span>
                 </div>
 
                 {/* Director Name & Role */}
@@ -225,7 +217,7 @@ export default function ManagementPage() {
 
                   {/* Role in Royal Blue */}
                   <span className="text-xs sm:text-sm font-bold text-primary block mt-1">
-                    Director
+                    {director.role}
                   </span>
 
                   {director.bio && (
@@ -241,7 +233,121 @@ export default function ManagementPage() {
       </Section>
 
       {/* =========================================================================
-          4. COOPERATIVE PRINCIPLES
+          4. OUR MANAGEMENT TEAM (id="management-team")
+          Bank staff leadership: Manager and two Assistant Managers
+          ========================================================================= */}
+      <section
+        id="management-team"
+        aria-labelledby="management-team-heading"
+        className="bg-[#F0F6FF] py-10 sm:py-14 lg:py-24 border-b border-slate-200/80"
+      >
+        <Container>
+          {/* Centered header */}
+          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+            {/* Small pill badge "Bank Staff" */}
+            <div className="flex justify-center mb-3">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-slate-200 bg-white shadow-2xs">
+                <span className="w-2 h-2 rounded-full bg-amber shrink-0" aria-hidden="true" />
+                <span className="text-xs sm:text-sm font-semibold text-navy">Bank Staff</span>
+              </div>
+            </div>
+
+            <h2
+              id="management-team-heading"
+              className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-text leading-tight"
+            >
+              {managementTeam.heading}
+            </h2>
+
+            <p className="mt-2 text-base sm:text-lg text-muted max-w-xl mx-auto">
+              {managementTeam.subText}
+            </p>
+
+            <p className="mt-4 text-base sm:text-lg text-text/80 leading-relaxed max-w-[700px] mx-auto">
+              {managementTeam.intro}
+            </p>
+          </div>
+
+          {/* Manager Card (Centered on its own row, slightly larger about 300px wide) */}
+          <div className="flex justify-center mb-6 sm:mb-8">
+            <article className="group bg-white rounded-[12px] border border-slate-200/90 overflow-hidden shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 flex flex-col w-full max-w-[340px] sm:max-w-[300px]">
+              {/* Manager Photo (4:5 portrait) */}
+              <div className="relative aspect-[4/4] bg-slate-100 overflow-hidden border-b border-slate-100">
+                <Image
+                  src={siteImages[manager.imageKey as ImageKey]?.src || "/images/staff-1.svg"}
+                  alt={manager.imageAlt}
+                  width={400}
+                  height={500}
+                  loading="lazy"
+                  className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+
+              {/* Manager Details */}
+              <div className="p-5 sm:p-6 flex-1 flex flex-col items-center text-center">
+                <span className="text-xs font-bold text-primary tracking-wider mb-1">
+                  Manager
+                </span>
+                <h3 className="text-base sm:text-lg font-semibold text-navy leading-snug">
+                  {manager.name}
+                </h3>
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-amber text-slate-900 mt-2.5 shadow-2xs">
+                  {manager.role}
+                </span>
+              </div>
+            </article>
+          </div>
+
+          {/* Assistant Managers (Two cards side by side, centered with same size as board cards) */}
+          <div className="flex flex-col md:flex-row justify-center items-center md:items-stretch gap-6 sm:gap-8 max-w-2xl mx-auto">
+            {assistantManagers.map((asst) => (
+              <article
+                key={asst.id}
+                className="group bg-white rounded-[12px] border border-slate-200/90 overflow-hidden shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 flex flex-col w-full max-w-[340px] md:max-w-[280px] lg:max-w-[300px] flex-1"
+              >
+                {/* Assistant Manager Photo */}
+                <div className="relative aspect-[4/4] bg-slate-100 overflow-hidden border-b border-slate-100">
+                  <Image
+                    src={siteImages[asst.imageKey as ImageKey]?.src || "/images/staff-2.svg"}
+                    alt={asst.imageAlt}
+                    width={400}
+                    height={500}
+                    loading="lazy"
+                    className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* Assistant Manager Details */}
+                <div className="p-5 sm:p-6 flex-1 flex flex-col items-center text-center">
+                  <span className="text-xs font-bold text-primary uppercase tracking-wider mb-1">
+                    Leadership
+                  </span>
+                  <h3 className="text-base sm:text-lg font-semibold text-navy leading-snug">
+                    {asst.name}
+                  </h3>
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-[#EBF3FE] text-primary mt-2.5 border border-primary/20">
+                    {asst.role}
+                  </span>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          {/* Internal Link to Contact Office */}
+          <div className="mt-10 sm:mt-12 text-center">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-1.5 text-sm sm:text-base font-semibold text-primary hover:text-primary-light transition-colors group"
+            >
+              <span>Contact our office</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+            </Link>
+          </div>
+        </Container>
+      </section>
+
+      {/* =========================================================================
+          5. COOPERATIVE PRINCIPLES
           Sub-text: "Values that guide our management team"
           Three value blocks:
             1. Democratic Member Control

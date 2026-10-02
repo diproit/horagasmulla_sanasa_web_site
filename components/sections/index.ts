@@ -10,3 +10,5 @@ export * from "./BenefitList";
 export * from "./InfoBlock";
 export * from "./HeroCarousel";
 export * from "./WelcomeStats";
+export * from "./AwardCard";
+export * from "./AwardsCarousel";
