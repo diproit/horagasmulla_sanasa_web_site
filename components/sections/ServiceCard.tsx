@@ -51,41 +51,56 @@ export function ServiceCard({
   return (
     <div
       className={cn(
-        "group flex flex-col bg-surface rounded-xl border border-slate-200/90 p-6 sm:p-7 shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 relative",
+        "group flex flex-col bg-surface rounded-xl border border-slate-200/90 p-6 sm:p-7 shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 relative overflow-hidden",
         className
       )}
     >
-      {/* Royal blue icon inside a soft blue tint container */}
-      <div className="w-13 h-13 rounded-xl bg-tint flex items-center justify-center shrink-0 mb-5 border border-primary/10 group-hover:scale-105 transition-transform duration-200">
-        {renderIcon()}
-      </div>
+      {/* Wave background image — decorative, hidden from screen readers */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/images/service-card-bg.png"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover object-left-bottom pointer-events-none select-none"
+      />
 
-      {/* Semantic H3 for card title */}
-      <h3 className="text-lg sm:text-xl font-bold tracking-tight text-text group-hover:text-primary transition-colors">
-        {title}
-      </h3>
+      {/* Subtle white overlay so text stays crisp over the wave art */}
+      <div className="absolute inset-0 bg-white/55 pointer-events-none" aria-hidden="true" />
 
-      <p className="mt-2.5 text-sm sm:text-base text-muted leading-relaxed flex-1">
-        {summary}
-      </p>
+      {/* Card content — sits above the background layers */}
+      <div className="relative z-10 flex flex-col flex-1">
+        {/* Royal blue icon inside a soft blue tint container */}
+        <div className="w-13 h-13 rounded-xl bg-tint flex items-center justify-center shrink-0 mb-5 border border-primary/10 group-hover:scale-105 transition-transform duration-200">
+          {renderIcon()}
+        </div>
 
-      {/* 
-        Accessible "Learn More" link:
-        Contrast Rule: cyan fails contrast on white surfaces, so royal blue (#0B63D6)
-        is used for the text with a cyan underline/arrow accent.
-      */}
-      <div className="mt-5 pt-4 border-t border-slate-100 flex items-center">
-        <Link
-          href={href}
-          className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary-light transition-colors group/link focus-visible:outline-2 focus-visible:outline-primary rounded-md py-1"
-        >
-          <span>Learn More</span>
-          <span className="sr-only"> about {title}</span>
-          <ArrowRight
-            className="w-4 h-4 text-cyan group-hover/link:translate-x-1 transition-transform duration-150"
-            aria-hidden="true"
-          />
-        </Link>
+        {/* Semantic H3 for card title */}
+        <h3 className="text-lg sm:text-xl font-bold tracking-tight text-text group-hover:text-primary transition-colors">
+          {title}
+        </h3>
+
+        <p className="mt-2.5 text-sm sm:text-base text-muted leading-relaxed flex-1">
+          {summary}
+        </p>
+
+        {/*
+          Accessible "Learn More" link.
+          Contrast Rule: cyan fails contrast on white surfaces, so royal blue (#0B63D6)
+          is used for the text with a cyan arrow accent.
+        */}
+        <div className="mt-5 pt-4 border-t border-slate-100 flex items-center">
+          <Link
+            href={href}
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary-light transition-colors group/link focus-visible:outline-2 focus-visible:outline-primary rounded-md py-1"
+          >
+            <span>Learn More</span>
+            <span className="sr-only"> about {title}</span>
+            <ArrowRight
+              className="w-4 h-4 text-cyan group-hover/link:translate-x-1 transition-transform duration-150"
+              aria-hidden="true"
+            />
+          </Link>
+        </div>
       </div>
     </div>
   );
