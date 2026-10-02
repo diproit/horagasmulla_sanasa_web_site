@@ -67,41 +67,78 @@ export const faqs: FAQItem[] = [
       "Our society spans multiple Grama Niladhari administrative divisions grouped into local geographical zones. Each zone convenes its own Zonal Council, ensuring community members have a direct voice in loan reviews, thrift circles, and welfare outreach.",
   },
 
-  // Services FAQs
+  // Services FAQs — based on the 11 real savings accounts effective 01.04.2026
   {
     id: "srv-1",
     category: "services",
-    question: "What types of savings accounts are offered?",
+    question: "What savings accounts does Horagasmulla SANASA offer?",
     answer:
-      "We provide targeted savings plans including Children's Savings Accounts (with educational rewards and annual gifts), Women's Savings Schemes (offering secure deposits and emergency micro-credit links), and Senior Citizens' Accounts (featuring prioritized counter service and dedicated welfare programs).",
+      "We offer eleven savings and deposit accounts: Member Savings Account (8% p.a.), Danayojana Savings (9%), Member Fixed Deposit (9%), Member Fixed Deposit – Monthly Interest (7.5%), Children's Savings (10%), Loan Security Deposit (8%), Abhimana Savings (5%), Sahas Savings (7%), D.S.H. Investment (6%), D.S.H. Youth (4.5%), and D.S.H. Super 60 Savings (5%). All rates are effective from 01.04.2026. Conditions apply.",
   },
   {
     id: "srv-2",
     category: "services",
-    question: "What loan facilities are available for members?",
+    question: "Which savings account is designed for children?",
     answer:
-      "We offer affordable, low-interest loan portfolios including Agricultural Loans (for seeds, fertilizer, and farm equipment), Housing & Renovation Loans (for building, buying, or extending homes), and Business Development Loans (for village shops, traditional crafts, and self-employed members).",
+      "The Children's Savings account is for all children below 18 years of age. It earns 10% per annum — the highest rate offered. The account can be opened with Rs. 1,000. Members who deposit Rs. 500 every month receive a set of books at the end of the year. A savings money box is provided at opening; the amount collected in the box is counted in December, and a 10% bonus on that amount is credited to the account.",
   },
   {
     id: "srv-3",
     category: "services",
-    question: "Can non-members apply for loan facilities?",
+    question: "Can non-members open a savings account?",
     answer:
-      "Our concessionary credit facilities and low-interest rates are reserved for registered cooperative members. Registering as a member allows you to apply for loan programs with the support and recommendation of your local zonal council.",
+      "Yes. The Abhimana Savings account accepts deposits from both members and non-members. It earns 5% per annum, and interest is credited to the account monthly.",
   },
   {
     id: "srv-4",
     category: "services",
-    question: "What welfare and community projects does the society run?",
+    question: "What is the minimum period for a fixed deposit?",
     answer:
-      "We regularly invest resources back into Dodangoda through free plant seedling distributions (green village home initiative), dry-ration welfare charity for vulnerable elder members, Wesak sermon and lantern festivals, and annual senior citizen appreciation events.",
+      "Fixed deposits can be made for a minimum period of one year or longer. The Member Fixed Deposit earns 9% per annum. If you prefer monthly interest payments, the Member Fixed Deposit – Monthly Interest scheme pays interest every month at 7.5% per annum (1.5% lower than the applicable fixed-deposit rate, as interest is received monthly).",
   },
   {
     id: "srv-5",
     category: "services",
-    question: "Are member records and transactions computerized?",
+    question: "How can I get a loan through a savings account?",
     answer:
-      "Yes. All accounts, passbooks, and banking operations at Horagasmulla SANASA are fully computerized, providing accurate, secure, and transparent financial records.",
+      "Through the Sahas Savings account, you deposit the same fixed amount every month for 12 months at 7% per annum. After completing 12 months, you can obtain a loan equivalent to three times the balance of the account. The loan must be repaid within 3 years through 36 installments.",
+  },
+
+  // Loan FAQs — based on the 11 real loan products
+  {
+    id: "srv-6",
+    category: "services",
+    question: "What types of loans does Horagasmulla SANASA offer?",
+    answer:
+      "We offer eleven loan types: General Loan (12%), Property Loan (15%), Shanik Loan (23%), Festival Loan (11%), Education Loan (11%), Movable Property Loan (15%), Security Loan (10%), Business Loan (35%), Goods Purchase Loan (11%), Disaster Loan (12%), and Sahas Loan (9%). Annual rates range from 9% to 35%. For every loan, an additional 1% is charged for the Education and Project Fund, in addition to the interest. Conditions apply.",
+  },
+  {
+    id: "srv-7",
+    category: "services",
+    question: "Can non-members get a loan?",
+    answer:
+      "Yes, but only through the Security Loan. Non-members who hold a fixed deposit with us can obtain up to 85% of the fixed deposit value as a loan. The interest rate is 2% above the applicable fixed-deposit rate, and repayment follows the maturity period of the deposit. All other loan types are available to members only.",
+  },
+  {
+    id: "srv-8",
+    category: "services",
+    question: "What do I need to qualify for a General Loan?",
+    answer:
+      "You must have completed at least 3 months of membership. The loan range is Rs. 50,000 to Rs. 1,000,000 at 12% per annum. You need to maintain 15% of the loan amount as share capital, provide security equivalent to 30% of the loan amount, and arrange two personal guarantors — each with a deposit of 25% of the loan amount in their accounts (totalling 50%).",
+  },
+  {
+    id: "srv-9",
+    category: "services",
+    question: "How do I repay a Business Loan?",
+    answer:
+      "The Business Loan is repaid over 8 months through daily installments. You do not need to visit the office every day — the daily installment can be handed over to the relevant field officer. Loan amounts range from Rs. 25,000 to Rs. 700,000 at 35% per annum, and the loan is available to members engaged in business activities.",
+  },
+  {
+    id: "srv-10",
+    category: "services",
+    question: "Is there any extra charge on loans?",
+    answer:
+      "Yes. For every type of loan, an additional 1% is charged for the Education and Project Fund, in addition to the stated interest rate. Conditions apply.",
   },
 
   // Contact FAQs

@@ -50,8 +50,8 @@ const HERO_SLIDES: HeroSlide[] = [
   },
   {
     id: "mobile-app",
-    image: "/images/hero/web L/hero-mobile-app1.webp",
-    tabletImage: "/images/hero/web T/3.webp",
+    image: "/images/hero/Web L/hero-mobile-app1.webp",
+    tabletImage: "/images/hero/Web T/3.webp",
     mobileImage: "/images/hero/Web M/3.webp",
     alt: "SANASA Mobile Banking App for Balance Inquiry, Bill Payments, and Loan Applications",
     tag: "DIGITAL & MOBILE BANKING",
@@ -69,8 +69,8 @@ const HERO_SLIDES: HeroSlide[] = [
   },
   {
     id: "digital-passbook",
-    image: "/images/hero/web L/hero-digital-passbook1.webp",
-    tabletImage: "/images/hero/web T/5.webp",
+    image: "/images/hero/Web L/hero-digital-passbook1.webp",
+    tabletImage: "/images/hero/Web T/5.webp",
     mobileImage: "/images/hero/Web M/4.webp",
     alt: "SANASA Digital Passbook for Real-Time Account Statements and Savings Tracking",
     tag: "PAPERLESS DIGITAL PASSBOOK",

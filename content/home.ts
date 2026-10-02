@@ -81,14 +81,14 @@ export const homeContent: HomeContent = {
       {
         title: "Savings & Deposits",
         summary:
-          "Secure savings with competitive interest; special accounts for children, women, and senior citizens.",
+          "Eleven savings and deposit options with annual interest rates from 4.5% to 10%.",
         href: "/services#savings",
         iconName: "PiggyBank",
       },
       {
         title: "Loans & Financial Aid",
         summary:
-          "Low-interest loans for farmers, housing, self-employment, and urgent personal needs.",
+          "Eleven loan types for education, festivals, property, vehicles, business and emergencies, with annual rates from 9% to 35%.",
         href: "/services#loans",
         iconName: "HandCoins",
       },
