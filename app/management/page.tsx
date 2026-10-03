@@ -84,7 +84,6 @@ export default function ManagementPage() {
         title={banner.title}
         subText={banner.subText}
         breadcrumbs={breadcrumbsList}
-        badge="Cooperative Governance"
       />
 
       {/* =========================================================================
@@ -97,11 +96,6 @@ export default function ManagementPage() {
         <Container>
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8 sm:mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tint text-primary text-xs font-semibold uppercase tracking-wider border border-primary/20 mb-3">
-                <Compass className="w-3.5 h-3.5" aria-hidden="true" />
-                <span>Democratic Accountability</span>
-              </div>
-
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-text leading-tight">
                 {governance.heading}
               </h2>
@@ -396,11 +390,6 @@ export default function ManagementPage() {
           ========================================================================= */}
       <Section background="hero" spacing="default" className="text-center">
         <Container className="max-w-3xl mx-auto py-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tint text-primary text-xs font-semibold uppercase tracking-wider border border-primary/20 mb-4">
-            <UserCheck className="w-3.5 h-3.5" aria-hidden="true" />
-            <span>Democratic Participation</span>
-          </div>
-
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-text leading-tight">
             Have a Voice in Your Local Bank
           </h2>

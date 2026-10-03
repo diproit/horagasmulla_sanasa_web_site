@@ -86,7 +86,6 @@ export default function AboutUsPage() {
         title={banner.title}
         subText={banner.subText}
         breadcrumbs={breadcrumbsList}
-        badge="Since 1965"
       />
 
       {/* =========================================================================
@@ -255,11 +254,6 @@ export default function AboutUsPage() {
           ========================================================================= */}
       <Section background="hero" spacing="default" className="text-center">
         <Container className="max-w-3xl mx-auto py-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tint text-primary text-xs font-semibold uppercase tracking-wider border border-primary/20 mb-4">
-            <Building className="w-3.5 h-3.5" aria-hidden="true" />
-            <span>Community Ownership</span>
-          </div>
-
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-text leading-tight">
             Ready to Join Our Cooperative Community?
           </h2>

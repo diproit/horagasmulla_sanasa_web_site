@@ -82,7 +82,6 @@ export default function ContactPage() {
         title={banner.title}
         subText={banner.subText}
         breadcrumbs={breadcrumbsList}
-        badge="Connect With Us"
       />
 
       {/* =========================================================================

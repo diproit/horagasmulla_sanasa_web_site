@@ -88,7 +88,6 @@ export default function ServicesPage() {
         title={banner.title}
         subText={banner.subText}
         breadcrumbs={breadcrumbsList}
-        badge="Cooperative Financial Solutions"
       />
 
       {/* In-page navigation anchors bar */}
