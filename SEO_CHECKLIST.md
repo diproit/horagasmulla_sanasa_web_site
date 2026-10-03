@@ -35,20 +35,34 @@
 
 ## 3. Meta Tags & Social Sharing Verification
 
+- [x] **Production Domain**: `https://horagasmulla.sanasa.org` configured with `metadataBase`.
 - [x] **Canonical URLs**: Built dynamically using `NEXT_PUBLIC_SITE_URL` via `buildMetadata` helper (`lib/seo.ts`).
+  - Home: `https://horagasmulla.sanasa.org/` (exact trailing slash)
+  - Inner Pages: `https://horagasmulla.sanasa.org/{path}` (no trailing slash)
 - [x] **Open Graph Tags**:
-  - `og:title`: Full page title.
-  - `og:description`: Page-specific meta description.
-  - `og:url`: Fully qualified canonical URL.
-  - `og:site_name`: "Dodangoda Horagasmulla SANASA Society Ltd".
-  - `og:locale`: "en_LK".
   - `og:type`: "website".
-  - `og:image`: 1200x630 branded OpenGraph card (`/images/og-image.svg`).
-- [x] **Twitter Cards**: `summary_large_image` with matching title, description, and image.
+  - `og:site_name`: "Dodangoda Horagasmulla SANASA".
+  - `og:locale`: "en_LK".
+  - `og:image`: 512x512 PNG card (`https://horagasmulla.sanasa.org/images/og-image.png`).
+  - `og:image:type`: "image/png".
+  - `og:image:alt`: "Horagasmulla SANASA logo: blue cupped hands holding the cooperative emblem, with the Sinhala name Horagasmulla over the bank building".
+- [x] **Twitter / X Cards**: `summary` card with matching title, description, image (`https://horagasmulla.sanasa.org/images/og-image.png`), and alt text.
 - [x] **Robots Meta Directives**:
   - `NEXT_PUBLIC_ALLOW_INDEXING=true`: Emits `index: true, follow: true, "max-image-preview": "large"`.
   - Otherwise: Emits `noindex, nofollow, noimageindex`.
   - `app/not-found.tsx`: Explicitly set to `noindex, nofollow`.
+
+### Open Graph & Social Sharing Review Matrix
+
+| Page | URL Path (`og:url` / Canonical) | Open Graph Title (`og:title`) | Open Graph Description (`og:description`) |
+| :--- | :--- | :--- | :--- |
+| **Home** | `https://horagasmulla.sanasa.org/` | `Dodangoda Horagasmulla SANASA` | `Dodangoda Horagasmulla SANASA Society Ltd: a trusted cooperative bank serving Dodangoda since 1965 with savings, loans and community welfare programs.` |
+| **About Us** | `https://horagasmulla.sanasa.org/about-us` | `About Us \| Dodangoda Horagasmulla SANASA` | `Discover Dodangoda Horagasmulla SANASA Society Ltd: 60+ years of cooperative banking, Rs. 400 Million assets, 750+ members, 7 trophies in cricket, netball, volleyball and drama, and modern facilities.` |
+| **Our Services** | `https://horagasmulla.sanasa.org/services` | `Savings Accounts, Loans & Welfare Services \| Dodangoda Horagasmulla SANASA` | `Horagasmulla SANASA: 11 savings accounts up to 10% p.a. and 11 loan types from 9% to 35% p.a., plus community welfare programs in Dodangoda.` |
+| **Membership** | `https://horagasmulla.sanasa.org/membership` | `Membership \| Dodangoda Horagasmulla SANASA` | `Join Horagasmulla SANASA: explore equal member ownership, annual dividend payouts, concessionary loan rates, and decentralized grassroots zonal governance.` |
+| **Management** | `https://horagasmulla.sanasa.org/management` | `Management \| Dodangoda Horagasmulla SANASA` | `Meet the democratically elected Board of Directors and leadership of Horagasmulla SANASA Society Ltd, dedicated to transparency, integrity, and community trust.` |
+| **Contact Us** | `https://horagasmulla.sanasa.org/contact` | `Contact Us \| Dodangoda Horagasmulla SANASA` | `Contact Dodangoda Horagasmulla SANASA Society Ltd: branch address, office & WhatsApp numbers, email inquiries, business hours, and Google Maps directions.` |
+
 
 ---
 
