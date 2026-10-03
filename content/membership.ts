@@ -1,34 +1,37 @@
-export interface MemberBenefit {
+export interface KeyBenefit {
+  icon?: string;
+  gif: string;
   title: string;
-  leadIn: string;
   description: string;
 }
 
-export interface ZonalStructureBlock {
+export interface BrochureInfo {
+  file: string;
+  downloadName: string;
   title: string;
   description: string;
 }
+
+export interface WhyJoinContent {
+  eyebrow: string;
+  heading: string;
+  subheading: string;
+  intro: string;
+  keyBenefitsHeading: string;
+  keyBenefits: KeyBenefit[];
+  closingQuote: string;
+  closingCta: string;
+  brochure: BrochureInfo;
+}
+
 
 export interface MembershipPageContent {
   banner: {
     title: string;
     subText: string;
   };
-  whyJoin: {
-    heading: string;
-    subText: string;
-    subHeading: string;
-    intro: string;
-    benefits: MemberBenefit[];
-    closingLine: string;
-  };
-  zonalStructure: {
-    heading: string;
-    subText: string;
-    subHeading: string;
-    paragraphs: string[];
-    blocks: ZonalStructureBlock[];
-  };
+  whyJoin: WhyJoinContent;
+
   eligibility: {
     heading: string;
     requirements: string[];
@@ -50,63 +53,84 @@ export const membershipContent: MembershipPageContent = {
     subText: "Cooperative ownership and direct democratic representation",
   },
   whyJoin: {
-    heading: "Why Become a Member?",
-    subText: "Ownership, shared benefits, and direct democratic participation",
-    subHeading: "Benefits of Membership",
+    eyebrow: "Why Become a Member?",
+    heading: "Save Today… Secure Tomorrow!",
+    subheading:
+      "Protect your future and the future of your loved ones by becoming a member of SANASA Welfare Society today.",
     intro:
-      "Unlike commercial banks, the society is owned entirely by its members. When you join, you are not merely a customer; you become an equal shareholder with a direct say in our cooperative direction.",
-    benefits: [
+      "Through membership, you and your family can have access to various welfare and financial benefits during important moments and unexpected situations in life.",
+    keyBenefitsHeading: "Key Benefits of Becoming a Member",
+    keyBenefits: [
       {
-        title: "Democratic Rights",
-        leadIn: "Democratic Rights:",
+        gif: "/gif/Financial Assistance in Emergencies.gif",
+        icon: "💰",
+        title: "Financial Assistance in Emergencies",
         description:
-          "Vote and select your zone's representatives to the Board of Directors, ensuring your community's voice is heard.",
+          "Financial support is available for members and their family members during various unexpected situations.",
       },
       {
-        title: "Dividend Payouts",
-        leadIn: "Dividend Payouts:",
+        gif: "/gif/Loan & Financial Facilities.gif",
+        icon: "🏠",
+        title: "Loan & Financial Facilities",
         description:
-          "Benefit from annual profit-sharing dividends calculated fairly on your thrift deposits and invested share capital.",
+          "Opportunities to access suitable loan and financial facilities according to your needs.",
       },
       {
-        title: "Special Loan Rates",
-        leadIn: "Special Loan Rates:",
+        gif: "/gif/Educational Assistance.gif",
+        icon: "🎓",
+        title: "Educational Assistance",
         description:
-          "Access preferential, concessionary credit facilities and repayment terms not accessible to non-members.",
+          "Welfare benefits to support the educational needs of members' children.",
       },
       {
-        title: "Community Welfare",
-        leadIn: "Community Welfare:",
+        gif: "/gif/Hospitalization & Health Support.gif",
+        icon: "🏥",
+        title: "Hospitalization & Health Support",
         description:
-          "Enjoy eligibility for emergency medical assistance, student scholarships, bereavement grants, and welfare relief.",
+          "Welfare benefits available for hospitalization and various healthcare needs.",
+      },
+      {
+        gif: "/gif/Financial Support for the Family in Case of Death.gif",
+        icon: "⚰️",
+        title: "Financial Support for the Family in Case of Death",
+        description:
+          "A welfare mechanism that provides financial assistance to the family in the event of a member's death.",
+      },
+      {
+        gif: "/gif/Marriage Benefits.gif",
+        icon: "💍",
+        title: "Marriage Benefits",
+        description:
+          "Welfare benefits available for important marriage-related occasions of members.",
+      },
+      {
+        gif: "/gif/Benefits for Childbirth.gif",
+        icon: "👶",
+        title: "Benefits for Childbirth",
+        description:
+          "Support and welfare benefits available for childbirth within members' families.",
+      },
+      {
+        gif: "/gif/Many More Membership Benefits.gif",
+        icon: "🎁",
+        title: "Many More Membership Benefits",
+        description:
+          "Enjoy a range of additional benefits through membership, savings, and welfare schemes.",
       },
     ],
-    closingLine:
-      "Membership ensures that financial assets remain within our community, directly financing local agriculture, housing, and enterprise.",
+    closingQuote:
+      "The small step you take today… can become a greater protection for your family tomorrow.",
+    closingCta:
+      "Join SANASA Welfare Society today and start building a more secure future for you and your family!",
+    brochure: {
+      file: "/pdf/membership-benefits.pdf",
+      downloadName: "SANASA-Membership-Benefits.pdf",
+      title: "Full Membership Benefits",
+      description:
+        "Read the complete details of the welfare and financial benefits (PDF).",
+    },
   },
-  zonalStructure: {
-    heading: "Geographical Zonal Structure",
-    subText: "Decentralized management that distributes decision-making authority",
-    subHeading: "Bridges to Local Governance",
-    paragraphs: [
-      "The society operates across multiple local administrative divisions in Dodangoda, organized into distinct geographical zones to keep banking close to the people.",
-      "Each zone conducts its own Zonal Council, guaranteeing that every hamlet and neighborhood exercises direct influence over cooperative investments, loan approvals, and community welfare initiatives.",
-    ],
-    blocks: [
-      {
-        title: "Grama Niladhari Divisions",
-        description: "Cooperative operations spanning across key administrative divisions in Dodangoda.",
-      },
-      {
-        title: "Geographical Zones",
-        description: "Neighborhood clusters organized for localized financial accessibility and regular meetings.",
-      },
-      {
-        title: "Zonal Councils",
-        description: "Locally elected grassroots councils handling member proposals, thrift circles, and loan reviews.",
-      },
-    ],
-  },
+ 
   eligibility: {
     heading: "Eligibility Requirements",
     requirements: [

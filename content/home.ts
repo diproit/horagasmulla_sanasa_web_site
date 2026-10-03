@@ -71,7 +71,7 @@ export const homeContent: HomeContent = {
     paragraphs: [
       "The society was founded as a local thrift and credit cooperative to foster financial independence and security across our villages.",
       "We encourage disciplined thrift deposits and provide affordable local credit, standing as one of the strongest community-based financial institutions in the division, democratically controlled by our members with modern computerized operations.",
-      "Beyond everyday banking, we lead welfare programs, green environmental drives, educational honors, and senior-citizen appreciation events that uplift our entire society.",
+      "Beyond everyday banking, we participate actively in religious and cultural events, member excursions, and awards for our children's achievements that uplift our entire community.",
     ],
   },
   featuredServices: {
@@ -93,9 +93,9 @@ export const homeContent: HomeContent = {
         iconName: "HandCoins",
       },
       {
-        title: "Welfare & CSR Activities",
+        title: "Community Welfare",
         summary:
-          "Support for members in need: senior citizens, environmental campaigns, charity, and medical aid.",
+          "Religious and cultural events, awards for our children's achievements, member excursions and anniversary celebrations.",
         href: "/services#welfare",
         iconName: "HeartHandshake",
       },

@@ -1,16 +1,13 @@
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 import {
-  Vote,
-  Percent,
-  BadgePercent,
-  HeartHandshake,
   MapPin,
   Compass,
   Users2,
   CheckCircle2,
   FileCheck,
   ArrowRight,
-  ShieldCheck,
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
@@ -18,6 +15,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { PageBanner } from "@/components/sections/PageBanner";
 import { FAQ } from "@/components/sections/FAQ";
+import { PdfPanel } from "@/components/sections/PdfPanel";
 import { membershipContent } from "@/content/membership";
 import { faqs } from "@/content/faqs";
 import { buildMetadata } from "@/lib/seo";
@@ -27,20 +25,20 @@ import { getBreadcrumbSchema, getFaqSchema } from "@/lib/schema";
 export const metadata = buildMetadata({
   title: "Membership",
   description:
-    "Join Horagasmulla SANASA: explore equal member ownership, annual dividend payouts, concessionary loan rates, and decentralized grassroots zonal governance.",
+    "Join Horagasmulla SANASA: access welfare & financial benefits including emergency assistance, loans, education, health support, marriage, and childbirth aid.",
   path: "/membership",
   keywords: [
     "Sanasa Bank membership",
-    "cooperative society membership",
-    "Horagasmulla SANASA shares",
-    "cooperative dividends Sri Lanka",
-    "Dodangoda cooperative bank",
+    "cooperative welfare benefits",
+    "SANASA welfare society",
+    "Horagasmulla SANASA loans",
+    "cooperative welfare Dodangoda",
     "zonal councils Dodangoda",
   ],
 });
 
 export default function MembershipPage() {
-  const { banner, whyJoin, zonalStructure, eligibility, howToJoin } =
+  const { banner, whyJoin, eligibility, howToJoin } =
     membershipContent;
 
   const membershipFaqs = faqs.filter((faq) => faq.category === "membership");
@@ -55,14 +53,6 @@ export default function MembershipPage() {
   const breadcrumbsList = [
     { label: "Home", href: "/" },
     { label: "Membership", href: "/membership" },
-  ];
-
-  // Benefit icons
-  const benefitIcons = [
-    <Vote key="1" className="w-6 h-6 text-primary" aria-hidden="true" />,
-    <Percent key="2" className="w-6 h-6 text-amber-dark" aria-hidden="true" />,
-    <BadgePercent key="3" className="w-6 h-6 text-emerald-600" aria-hidden="true" />,
-    <HeartHandshake key="4" className="w-6 h-6 text-rose-500" aria-hidden="true" />,
   ];
 
   // Zonal block icons
@@ -91,132 +81,119 @@ export default function MembershipPage() {
       />
 
       {/* =========================================================================
-          2. WHY BECOME A MEMBER?
-          Sub-text: "Ownership, shared benefits, and direct democratic participation"
-          Sub-heading: "Benefits of Membership"
-          Intro paragraph
-          Four benefits with bold lead-ins shown as four cards
-          Closing line
+          2. WHY BECOME A MEMBER? & PDF PANEL
+          Desktop: 12-column grid (8 cols left content + 4 cols sticky PDF panel)
+          Mobile/Tablet: single column (badge, H2, subheading, intro, link, key benefits, PDF panel, closing band)
           ========================================================================= */}
-      <Section background="default" spacing="spacious" className="border-b border-slate-200/80">
+      <section className="bg-white py-10 sm:py-14 lg:py-20 border-b border-slate-200/80">
         <Container>
-          <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-14">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tint text-primary text-xs font-semibold uppercase tracking-wider border border-primary/20 mb-3">
-              <ShieldCheck className="w-3.5 h-3.5" aria-hidden="true" />
-              <span>Equal Stakeholder</span>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+            {/* LEFT COLUMN: 8 Columns (two-thirds) */}
+            <div className="lg:col-span-7 flex flex-col">
+              {/* Eyebrow Badge */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white text-primary text-xs font-semibold uppercase tracking-wider border border-slate-200 shadow-xs mb-3.5 self-start">
+                <span className="w-2 h-2 rounded-full bg-amber shrink-0" aria-hidden="true" />
+                <span>{whyJoin.eyebrow}</span>
+              </div>
+
+              {/* H2 Heading with Amber Underline Accent */}
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-text leading-tight">
+                {whyJoin.heading}
+                <span className="block w-16 h-1 bg-amber rounded-full mt-3" aria-hidden="true" />
+              </h2>
+
+              {/* Subheading as semibold royal-blue paragraph */}
+              <p className="mt-4 text-base sm:text-lg text-primary font-semibold leading-snug">
+                {whyJoin.subheading}
+              </p>
+
+              {/* Intro in muted gray */}
+              <p className="mt-3 text-sm sm:text-base text-muted leading-relaxed">
+                {whyJoin.intro}
+              </p>
+
+              {/* Internal Link to Services */}
+              <div className="mt-3.5 mb-6">
+                <Link
+                  href="/services"
+                  className="inline-flex items-center text-sm font-semibold text-primary hover:text-primary-dark transition-colors group"
+                >
+                  <span>See our savings and loan options</span>
+                  <ArrowRight className="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                </Link>
+              </div>
+
+              {/* H3 Key Benefits Heading */}
+              <h3 className="text-xl sm:text-2xl font-bold text-text mb-5">
+                {whyJoin.keyBenefitsHeading}
+              </h3>
+
+              {/* 8 Benefit Cards Grid (2 cols on md+, 1 col on phones) */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
+                {whyJoin.keyBenefits.map((benefit, index) => (
+                  <article
+                    key={index}
+                    className="bg-white rounded-xl p-5 border border-slate-200/90 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 flex items-start gap-3.5 group"
+                  >
+                    <div
+                      className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-200/80 flex items-center justify-center shrink-0 overflow-hidden p-1 shadow-2xs group-hover:scale-105 transition-transform duration-200"
+                      aria-hidden="true"
+                    >
+                      <Image
+                        src={benefit.gif}
+                        alt={benefit.title}
+                        width={48}
+                        height={48}
+                        className="w-full h-full object-contain"
+                        unoptimized
+                      />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <h4 className="text-base font-semibold text-text leading-snug group-hover:text-primary transition-colors">
+                        {benefit.title}
+                      </h4>
+                      <p className="text-xs sm:text-sm text-muted mt-1 leading-relaxed">
+                        {benefit.description}
+                      </p>
+                    </div>
+                  </article>
+                ))}
+              </div>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-text leading-tight">
-              {whyJoin.heading}
-            </h2>
-
-            <p className="mt-2 text-base sm:text-lg text-primary font-semibold">
-              {whyJoin.subHeading}
-            </p>
-
-            <p className="mt-1 text-sm sm:text-base text-muted">
-              {whyJoin.subText}
-            </p>
-
-            <p className="mt-4 text-base sm:text-lg text-text/90 leading-relaxed max-w-2xl mx-auto">
-              {whyJoin.intro}
-            </p>
-          </div>
-
-          {/* Four Benefit Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {whyJoin.benefits.map((benefit, index) => (
-              <article
-                key={benefit.title}
-                className="bg-surface rounded-2xl p-6 border border-slate-200/90 shadow-xs hover:shadow-md hover:border-primary/40 transition-all duration-200 flex flex-col group"
-              >
-                <div className="w-12 h-12 rounded-xl bg-tint flex items-center justify-center shrink-0 mb-4 group-hover:scale-105 transition-transform duration-200">
-                  {benefitIcons[index % benefitIcons.length]}
-                </div>
-
-                <h3 className="text-lg font-bold text-text group-hover:text-primary transition-colors leading-snug">
-                  {benefit.title}
-                </h3>
-
-                <p className="mt-2.5 text-sm text-muted leading-relaxed flex-1">
-                  <strong className="text-text font-bold block mb-1">
-                    {benefit.leadIn}
-                  </strong>
-                  {benefit.description}
-                </p>
-              </article>
-            ))}
-          </div>
-
-          {/* Closing Line Box */}
-          <div className="mt-10 sm:mt-12 max-w-3xl mx-auto p-5 rounded-2xl bg-tint border border-primary/20 text-center">
-            <p className="text-sm sm:text-base font-semibold text-primary">
-              {whyJoin.closingLine}
-            </p>
-          </div>
-        </Container>
-      </Section>
-
-      {/* =========================================================================
-          3. GEOGRAPHICAL ZONAL STRUCTURE
-          Sub-text: "Decentralized management that distributes decision-making authority"
-          Sub-heading: "Bridges to Local Governance"
-          Two paragraphs
-          Three info blocks (Grama Niladhari Divisions, Geographical Zones, Zonal Councils)
-          ========================================================================= */}
-      <Section background="surface" spacing="spacious" className="border-b border-slate-200/80">
-        <Container>
-          <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-14">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tint text-primary text-xs font-semibold uppercase tracking-wider border border-primary/20 mb-3">
-              <Compass className="w-3.5 h-3.5" aria-hidden="true" />
-              <span>Decentralized Structure</span>
-            </div>
-
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-text leading-tight">
-              {zonalStructure.heading}
-            </h2>
-
-            <p className="mt-2 text-base sm:text-lg text-primary font-semibold">
-              {zonalStructure.subHeading}
-            </p>
-
-            <p className="mt-1 text-sm sm:text-base text-muted">
-              {zonalStructure.subText}
-            </p>
-
-            <div className="mt-5 space-y-3 text-base sm:text-lg text-text/90 leading-relaxed text-left max-w-2xl mx-auto bg-background p-6 rounded-2xl border border-slate-200/80 shadow-xs">
-              {zonalStructure.paragraphs.map((p, index) => (
-                <p key={index} className="flex items-start gap-3">
-                  <span className="w-2 h-2 rounded-full bg-primary mt-2.5 shrink-0" aria-hidden="true" />
-                  <span>{p}</span>
-                </p>
-              ))}
+            {/* RIGHT COLUMN: 4 Columns (exactly one-third width) - Sticky on Desktop */}
+            <div className="lg:col-span-5 lg:sticky lg:top-24">
+              <PdfPanel brochure={whyJoin.brochure} benefits={whyJoin.keyBenefits} />
             </div>
           </div>
 
-          {/* Three Info Blocks */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
-            {zonalStructure.blocks.map((block, index) => (
-              <div
-                key={block.title}
-                className="bg-background rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-xs hover:border-primary/40 transition-colors"
-              >
-                <div className="w-12 h-12 rounded-xl bg-tint flex items-center justify-center shrink-0 mb-4">
-                  {zonalIcons[index % zonalIcons.length]}
-                </div>
-
-                <h3 className="text-lg font-bold text-text mb-2 leading-snug">
-                  {block.title}
-                </h3>
-
-                <p className="text-sm text-muted leading-relaxed">
-                  {block.description}
+          {/* Full-width Closing Band */}
+          <div className="mt-12 lg:mt-16 bg-[#072556] text-white rounded-2xl p-6 sm:p-8 lg:p-10 shadow-lg">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+              <div className="max-w-2xl">
+                <blockquote className="text-lg sm:text-xl font-medium italic text-white leading-relaxed flex items-start gap-2">
+                  <span className="text-amber text-3xl font-serif leading-none shrink-0" aria-hidden="true">“</span>
+                  <span>{whyJoin.closingQuote}</span>
+                </blockquote>
+                <p className="mt-3 text-sm sm:text-base text-cyan-pale/90 pl-5 sm:pl-6">
+                  {whyJoin.closingCta}
                 </p>
               </div>
-            ))}
+
+              <div className="shrink-0 pl-5 sm:pl-6 md:pl-0">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-amber hover:bg-amber-light text-slate-900 font-bold transition-all duration-200 shadow-md hover:shadow-lg group"
+                >
+                  <span className="leading-none">Contact Us to Register</span>
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 shrink-0" aria-hidden="true" />
+                </Link>
+              </div>
+            </div>
           </div>
         </Container>
-      </Section>
+      </section>
+
 
       {/* =========================================================================
           4. ELIGIBILITY REQUIREMENTS
@@ -310,7 +287,7 @@ export default function MembershipPage() {
         <Container>
           <SectionHeading
             heading="Membership Frequently Asked Questions"
-            subText="Answers to common questions regarding eligibility, share capital, voting rights, and zonal councils."
+            subText="Answers to common questions regarding eligibility, welfare benefits, share capital, and zonal councils."
             align="center"
             withAmberBar
             className="mb-8 sm:mb-12"

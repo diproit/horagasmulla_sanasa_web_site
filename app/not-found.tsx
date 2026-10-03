@@ -46,7 +46,7 @@ export default function NotFound() {
     },
     {
       title: "Membership",
-      description: "Democratic rights, zonal councils, and registration details.",
+      description: "Welfare benefits, loan facilities, and registration details.",
       href: "/membership",
       icon: <Users className="w-5 h-5 text-primary" aria-hidden="true" />,
     },
