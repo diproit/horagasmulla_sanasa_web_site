@@ -77,7 +77,6 @@ export default function MembershipPage() {
         title={banner.title}
         subText={banner.subText}
         breadcrumbs={breadcrumbsList}
-        badge="Community Stakeholder"
       />
 
       {/* =========================================================================
@@ -237,11 +236,6 @@ export default function MembershipPage() {
       <Section background="surface" spacing="spacious" className="border-b border-slate-200/80">
         <Container>
           <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tint text-primary text-xs font-semibold uppercase tracking-wider border border-primary/20 mb-3">
-              <FileCheck className="w-3.5 h-3.5" aria-hidden="true" />
-              <span>Registration Process</span>
-            </div>
-
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-text leading-tight">
               {howToJoin.heading}
             </h2>
