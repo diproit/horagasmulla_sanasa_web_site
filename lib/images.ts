@@ -53,10 +53,10 @@ export const siteImages: Record<ImageKey, SiteImage> = {
     caption: "Dodangoda Horagasmulla SANASA Bank",
   },
   "og-image": {
-    src: "/images/og-image.svg",
-    alt: "Dodangoda Horagasmulla SANASA Society Ltd — Trusted Cooperative Banking since 1965",
-    width: 1200,
-    height: 630,
+    src: "/images/og-image.png",
+    alt: "Horagasmulla SANASA logo: blue cupped hands holding the cooperative emblem, with the Sinhala name Horagasmulla over the bank building",
+    width: 512,
+    height: 512,
   },
   "main-office": {
     src: "/images/main-office.jpg",

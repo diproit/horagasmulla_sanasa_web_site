@@ -3,6 +3,8 @@ import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+import { BASE_SITE_URL } from "@/lib/seo";
+
 export interface BreadcrumbItem {
   label: string;
   href?: string;
@@ -81,7 +83,7 @@ export function Breadcrumbs({
  */
 export function generateBreadcrumbsJsonLd(
   items: BreadcrumbItem[],
-  baseUrl: string = "https://horagasmulla-sanasa.org"
+  baseUrl: string = BASE_SITE_URL
 ) {
   const allItems: BreadcrumbItem[] = [
     { label: "Home", href: "/" },

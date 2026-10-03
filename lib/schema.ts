@@ -81,7 +81,7 @@ export function getBankOrCreditUnionSchema(
     description: HOME_TITLE,
     url: baseUrl,
     logo: `${baseUrl}/images/sanasa-logo.svg`,
-    image: `${baseUrl}/images/og-image.svg`,
+    image: `${baseUrl}/images/og-image.png`,
     telephone: ["+94706400288", "+94342285061"],
     email: "sanasa.hor@gmail.com",
     foundingDate: "1965",

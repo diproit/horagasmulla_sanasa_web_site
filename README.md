@@ -2,6 +2,8 @@
 
 Official website project for **Dodangoda Horagasmulla SANASA Society Ltd**, a cooperative bank located in Dodangoda, Sri Lanka.
 
+- **Production URL**: [https://horagasmulla.sanasa.org](https://horagasmulla.sanasa.org)
+
 ## Tech Stack
 
 - **Framework**: [Next.js](https://nextjs.org/) (App Router)

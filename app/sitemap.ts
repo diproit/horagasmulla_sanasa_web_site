@@ -8,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const pages = [
     {
-      path: "",
+      path: "/",
       priority: 1.0,
       changeFrequency: "weekly" as const,
     },

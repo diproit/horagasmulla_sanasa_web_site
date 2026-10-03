@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
 
 export const SITE_NAME = "Dodangoda Horagasmulla SANASA Society Ltd";
+export const OG_SITE_NAME = "Dodangoda Horagasmulla SANASA";
+
 export const HOME_TITLE =
   "Dodangoda Horagasmulla SANASA Society Ltd — Trusted Cooperative Banking since 1965";
+export const HOME_OG_TITLE = "Dodangoda Horagasmulla SANASA";
+export const HOME_OG_DESCRIPTION =
+  "Dodangoda Horagasmulla SANASA Society Ltd: a trusted cooperative bank serving Dodangoda since 1965 with savings, loans and community welfare programs.";
+
 export const DEFAULT_DESCRIPTION =
   "Official website of Dodangoda Horagasmulla SANASA Society Ltd. Empowering our community with secure savings, low-interest agricultural and microfinance loans, and welfare projects.";
 
@@ -20,7 +26,11 @@ export const DEFAULT_KEYWORDS = [
 ];
 
 export const BASE_SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "http://localhost:3000";
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://horagasmulla.sanasa.org";
+
+export const DEFAULT_OG_IMAGE = "/images/og-image.png";
+export const DEFAULT_OG_IMAGE_ALT =
+  "Horagasmulla SANASA logo: blue cupped hands holding the cooperative emblem, with the Sinhala name Horagasmulla over the bank building";
 
 export interface BuildMetadataParams {
   title?: string;
@@ -39,13 +49,22 @@ export function buildMetadata({
   description = DEFAULT_DESCRIPTION,
   path = "",
   keywords = DEFAULT_KEYWORDS,
-  image = "/images/og-image.svg",
+  image = DEFAULT_OG_IMAGE,
 }: BuildMetadataParams = {}): Metadata {
   const isHome = !title || path === "/" || path === "";
   const fullTitle = isHome ? HOME_TITLE : `${title} — ${SITE_NAME}`;
 
+  // Canonical and og:url:
+  // Home page must be exactly "https://horagasmulla.sanasa.org/" (with trailing slash)
+  // Inner pages: "https://horagasmulla.sanasa.org/about-us" etc. (no trailing slash)
   const cleanPath = path ? (path.startsWith("/") ? path : `/${path}`) : "";
-  const canonicalUrl = `${BASE_SITE_URL}${cleanPath}`;
+  const canonicalUrl = isHome
+    ? `${BASE_SITE_URL}/`
+    : `${BASE_SITE_URL}${cleanPath.replace(/\/$/, "")}`;
+
+  const ogTitle = isHome ? HOME_OG_TITLE : `${title} | ${OG_SITE_NAME}`;
+  const ogDescription = isHome ? HOME_OG_DESCRIPTION : description;
+
   const allowIndexing = process.env.NEXT_PUBLIC_ALLOW_INDEXING === "true";
 
   const formattedKeywords = Array.isArray(keywords)
@@ -60,6 +79,7 @@ export function buildMetadata({
     : `${BASE_SITE_URL}${image.startsWith("/") ? image : `/${image}`}`;
 
   return {
+    metadataBase: new URL(BASE_SITE_URL),
     title: fullTitle,
     description,
     keywords: formattedKeywords,
@@ -89,26 +109,32 @@ export function buildMetadata({
           },
         },
     openGraph: {
-      title: fullTitle,
-      description,
-      url: canonicalUrl,
-      siteName: SITE_NAME,
-      locale: "en_LK",
       type: "website",
+      siteName: OG_SITE_NAME,
+      title: ogTitle,
+      description: ogDescription,
+      url: canonicalUrl,
+      locale: "en_LK",
       images: [
         {
           url: ogImageUrl,
-          width: 1200,
-          height: 630,
-          alt: fullTitle,
+          width: 512,
+          height: 512,
+          type: "image/png",
+          alt: DEFAULT_OG_IMAGE_ALT,
         },
       ],
     },
     twitter: {
-      card: "summary_large_image",
-      title: fullTitle,
-      description,
-      images: [ogImageUrl],
+      card: "summary",
+      title: ogTitle,
+      description: ogDescription,
+      images: [
+        {
+          url: ogImageUrl,
+          alt: DEFAULT_OG_IMAGE_ALT,
+        },
+      ],
     },
     icons: {
       icon: [
