@@ -1,3 +1,5 @@
+import { type ImageKey } from "@/lib/images";
+
 // ─── Savings Accounts ─────────────────────────────────────────────────────────
 
 export interface SavingsAccount {
@@ -310,15 +312,94 @@ export const loanProducts: LoanProduct[] = [
   },
 ];
 
-// ─── Welfare (page content) ──────────────────────────────────────────────────
+// ─── Welfare & Community Activities ──────────────────────────────────────────
 
-export interface WelfareProject {
+export interface WelfareActivity {
   id: string;
+  dateLabel: string | null;
+  isoDate: string | null;
+  tag: string;
   title: string;
-  caption: string;
   description: string;
-  imageKey: string;
+  imageKey: ImageKey;
+  imageAlt: string;
 }
+
+export const welfareActivities: WelfareActivity[] = [
+  {
+    id: "service-recognition",
+    dateLabel: "13/12/2001 – 13/12/2025",
+    isoDate: "2001-12-13/2025-12-13",
+    tag: "Staff Recognition",
+    title: "Recognition of 24 Years of Service",
+    description:
+      "Recognition of 24 years of service (13/12/2001 – 13/12/2025) of our Manager, S. D. Nadeeka Kumuduni.",
+    imageKey: "welfare-1",
+    imageAlt:
+      "Recognition of 24 years of service of Manager S. D. Nadeeka Kumuduni at Horagasmulla SANASA",
+  },
+  {
+    id: "kathina-sermons",
+    dateLabel: "30 September 2023",
+    isoDate: "2023-09-30",
+    tag: "Religious & Cultural",
+    title: "Kathina Sermon Series",
+    description:
+      "A series of Kathina sermons organized by the Horagasmulla SANASA Society, held on September 30, 2023, at the Isurupura Sri Sangaraja Maha Viharaya in Dodangoda.",
+    imageKey: "welfare-2",
+    imageAlt:
+      "Members and staff at the Kathina sermon series at Isurupura Sri Sangaraja Maha Viharaya, Dodangoda",
+  },
+  {
+    id: "annual-excursion",
+    dateLabel: "10 February 2024",
+    isoDate: "2024-02-10",
+    tag: "Member Outing",
+    title: "Annual Excursion to Ampara",
+    description:
+      "The Horagasmulla SANASA Annual Excursion to Ampara, held on 10 February 2024.",
+    imageKey: "welfare-3",
+    imageAlt:
+      "Horagasmulla SANASA members during the annual excursion to Ampara",
+  },
+  {
+    id: "education-cash-prizes",
+    dateLabel: null,
+    isoDate: null,
+    tag: "Education",
+    title: "Cash Prizes for Our Children's Achievements",
+    description:
+      "Cash prizes awarded to our children who passed the 2023 Advanced Level examination and qualified for university admission, the Grade 5 Scholarship examination, and the G.C.E. Ordinary Level examination.",
+    imageKey: "welfare-4",
+    imageAlt:
+      "Cash prizes awarded to children of Horagasmulla SANASA members for examination achievements",
+  },
+  {
+    id: "deity-statues-ceremony",
+    dateLabel: "16 March 2024",
+    isoDate: "2024-03-16",
+    tag: "Religious & Cultural",
+    title: "Ceremony for the Installation of New Deity Statues",
+    description:
+      "A special religious event for the Hindu members of the Horagasmulla SANASA Society, held at Payagala Estate on March 16, 2024.",
+    imageKey: "welfare-5",
+    imageAlt:
+      "Special religious ceremony for the installation of new deity statues at Payagala Estate for Hindu members",
+  },
+  {
+    id: "59th-anniversary",
+    dateLabel: null,
+    isoDate: null,
+    tag: "Milestone",
+    title: "Celebrating Our 59th Anniversary",
+    // TODO: confirm the year/date of this event, then add it
+    description:
+      "Celebrating the proud 59th anniversary of the Horagasmulla SANASA Society.",
+    imageKey: "welfare-6",
+    imageAlt:
+      "Celebrating the proud 59th anniversary of Horagasmulla SANASA Society",
+  },
+];
 
 export interface ServicesPageContent {
   banner: {
@@ -330,7 +411,6 @@ export interface ServicesPageContent {
     subText: string;
     subHeading: string;
     paragraph: string;
-    projects: WelfareProject[];
   };
 }
 
@@ -343,42 +423,8 @@ export const servicesContent: ServicesPageContent = {
   welfare: {
     heading: "Community Welfare & Social Responsibility",
     subText: "Active local participation beyond traditional banking",
-    subHeading: "Social Upliftment Programs",
+    subHeading: "Beyond Banking: Standing with Our Community",
     paragraph:
-      "The society directs resources back into the village through free seedling distribution, religious programs during Wesak, children's savings events, and dry-ration distribution for vulnerable elder members.",
-    projects: [
-      {
-        id: "plant-distribution",
-        title: "Plant Distribution",
-        caption: "Green village home initiative",
-        description:
-          "Distributing fruit saplings and useful plants to households to support community environmental health and home gardening.",
-        imageKey: "welfare-plants",
-      },
-      {
-        id: "welfare-charity",
-        title: "Welfare Charity",
-        caption: "Supporting elder members in need",
-        description:
-          "Providing vital dry rations, health supplies, and emergency financial support for disadvantaged and elder village residents.",
-        imageKey: "welfare-charity",
-      },
-      {
-        id: "wesak-ceremony",
-        title: "Wesak Ceremony",
-        caption: "Dhamma sermons and lights festival",
-        description:
-          "Organizing spiritual Dhamma sermons, illumination lanterns, and traditional community gatherings during sacred religious festivals.",
-        imageKey: "welfare-wesak",
-      },
-      {
-        id: "senior-appreciation",
-        title: "Senior Appreciation",
-        caption: "Honoring our founding senior members",
-        description:
-          "Special ceremonies honoring the pioneer senior members whose decades of trust built our society's enduring strength.",
-        imageKey: "welfare-senior",
-      },
-    ],
+      "Horagasmulla SANASA takes part in the religious, cultural and educational life of its members and the Dodangoda community, from Kathina sermons and festivals to awards for our children's achievements, member outings and anniversary celebrations.",
   },
 };

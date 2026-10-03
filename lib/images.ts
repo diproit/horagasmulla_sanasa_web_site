@@ -27,6 +27,12 @@ export type ImageKey =
   | "welfare-charity"
   | "welfare-wesak"
   | "welfare-senior"
+  | "welfare-1"
+  | "welfare-2"
+  | "welfare-3"
+  | "welfare-4"
+  | "welfare-5"
+  | "welfare-6"
   | "board-1"
   | "board-2"
   | "board-3"
@@ -36,7 +42,8 @@ export type ImageKey =
   | "board-7"
   | "staff-1"
   | "staff-2"
-  | "staff-3";
+  | "staff-3"
+  | "membership-cover";
 
 export const siteImages: Record<ImageKey, SiteImage> = {
   logo: {
@@ -143,6 +150,43 @@ export const siteImages: Record<ImageKey, SiteImage> = {
     height: 600,
     caption: "Banking Office",
   },
+  // TEMPORARY: reused existing images. Replace each welfare-N path with the real event photo (public/images/welfare-N.jpg) when available.
+  "welfare-1": {
+    src: "/images/1.jpeg",
+    alt: "Recognition of 24 years of service of Manager S. D. Nadeeka Kumuduni at Horagasmulla SANASA",
+    width: 800,
+    height: 600,
+  },
+  "welfare-2": {
+    src: "/images/2.jpeg",
+    alt: "Members and staff at the Kathina sermon series at Isurupura Sri Sangaraja Maha Viharaya, Dodangoda",
+    width: 800,
+    height: 600,
+  },
+  "welfare-3": {
+    src: "/images/3.jpeg",
+    alt: "Horagasmulla SANASA members during the annual excursion to Ampara",
+    width: 800,
+    height: 600,
+  },
+  "welfare-4": {
+    src: "/images/4.jpeg",
+    alt: "Cash prizes awarded to children of Horagasmulla SANASA members for examination achievements",
+    width: 800,
+    height: 600,
+  },
+  "welfare-5": {
+    src: "/images/5.jpeg",
+    alt: "Special religious ceremony for the installation of new deity statues at Payagala Estate for Hindu members",
+    width: 800,
+    height: 600,
+  },
+  "welfare-6": {
+    src: "/images/6.jpeg",
+    alt: "Celebrating the proud 59th anniversary of Horagasmulla SANASA Society",
+    width: 800,
+    height: 600,
+  },
   "welfare-plants": {
     src: "/images/welfare-plants.svg",
     alt: "Green Village Home Initiative Free Plant and Seedling Distribution",
@@ -238,6 +282,12 @@ export const siteImages: Record<ImageKey, SiteImage> = {
     alt: "P . Chamari Lakmini, Assistant Manager",
     width: 400,
     height: 400,
+  },
+  "membership-cover": {
+    src: "/images/membership-benefits-cover.png",
+    alt: "සී/ස දොඩන්ගොඩ හොරගස්මුල්ල සකසුරුවම් හා ණය ගනුදෙනු සමුපකාර සමිතිය - නව සුභ සාධක කාරක නියෝග මාලාව",
+    width: 600,
+    height: 700,
   },
 };
 

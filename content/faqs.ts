@@ -32,6 +32,13 @@ export const faqCategories: FAQCategory[] = [
 export const faqs: FAQItem[] = [
   // Membership FAQs
   {
+    id: "mem-0",
+    category: "membership",
+    question: "What benefits do members get?",
+    answer:
+      "Members of SANASA Welfare Society receive eight key benefits: financial assistance in emergencies, loan and financial facilities, educational assistance for children, hospitalization and health support, financial assistance for the family in case of death, marriage benefits, childbirth benefits, and many more membership, savings, and welfare schemes.",
+  },
+  {
     id: "mem-1",
     category: "membership",
     question: "Who is eligible to become a member of Horagasmulla SANASA?",
@@ -50,7 +57,7 @@ export const faqs: FAQItem[] = [
     category: "membership",
     question: "How is cooperative membership different from being a customer at a commercial bank?",
     answer:
-      "Unlike commercial banks, Horagasmulla SANASA is entirely member-owned. As an equal stakeholder, you have democratic voting rights to elect zonal board representatives, receive dividend payouts from thrift deposits and share capital, and gain access to preferential loan schemes and welfare relief.",
+      "Unlike commercial banks, Horagasmulla SANASA is entirely member-owned. When you join, you become an equal shareholder with access to comprehensive family welfare schemes, emergency financial aid, loan facilities, and democratic participation in our cooperative governance.",
   },
   {
     id: "mem-4",
@@ -139,6 +146,13 @@ export const faqs: FAQItem[] = [
     question: "Is there any extra charge on loans?",
     answer:
       "Yes. For every type of loan, an additional 1% is charged for the Education and Project Fund, in addition to the stated interest rate. Conditions apply.",
+  },
+  {
+    id: "srv-11",
+    category: "services",
+    question: "Does Horagasmulla SANASA take part in community activities?",
+    answer:
+      "Yes. Horagasmulla SANASA actively participates in community, cultural, and educational activities. Recent initiatives include organizing a Kathina sermon series at Isurupura Sri Sangaraja Maha Viharaya in 2023, an annual member excursion to Ampara in 2024, awarding cash prizes to children for G.C.E. Advanced Level, Ordinary Level, and Grade 5 Scholarship examination successes, a special deity statue installation ceremony for Hindu members at Payagala Estate in 2024, and celebrating the society's 59th anniversary.",
   },
 
   // Contact FAQs

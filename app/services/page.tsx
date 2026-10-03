@@ -15,7 +15,7 @@ import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { PageBanner } from "@/components/sections/PageBanner";
-import { PhotoCardGrid, type PhotoCardItem } from "@/components/sections/PhotoCard";
+import { ActivityCard } from "@/components/sections/ActivityCard";
 import { FAQ } from "@/components/sections/FAQ";
 import {
   servicesContent,
@@ -23,6 +23,7 @@ import {
   savingsNote,
   loanProducts,
   loanNote,
+  welfareActivities,
 } from "@/content/services";
 import { faqs } from "@/content/faqs";
 import { type ImageKey } from "@/lib/images";
@@ -73,16 +74,6 @@ export default function ServicesPage() {
     { label: "Our Services", href: "/services" },
   ];
 
-  // Icons for Loan Schemes — removed (no longer used)
-
-  // Prepare Welfare Projects for PhotoCardGrid
-  const welfareItems: PhotoCardItem[] = welfare.projects.map((project) => ({
-    id: project.id,
-    title: project.title,
-    caption: project.caption,
-    subText: project.description,
-    imageKey: project.imageKey as ImageKey,
-  }));
 
   return (
     <>
@@ -437,7 +428,22 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          <PhotoCardGrid items={welfareItems} columns={4} aspectRatio="video" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 items-stretch">
+            {welfareActivities.map((activity) => (
+              <ActivityCard key={activity.id} activity={activity} />
+            ))}
+          </div>
+
+          {/* CTA row */}
+          <div className="mt-10 sm:mt-12 flex flex-wrap items-center justify-center gap-4">
+            <Button href="/membership" variant="primary" size="md">
+              <span>Become a member</span>
+              <ArrowRight className="w-4 h-4 ml-2" aria-hidden="true" />
+            </Button>
+            <Button href="/contact" variant="outline" size="md">
+              <span>Contact our office</span>
+            </Button>
+          </div>
         </Container>
       </Section>
 
