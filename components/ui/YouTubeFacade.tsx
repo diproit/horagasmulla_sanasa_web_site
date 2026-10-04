@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Play } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -18,12 +18,20 @@ export function YouTubeFacade({
   className,
 }: YouTubeFacadeProps) {
   const [isPlaying, setIsPlaying] = useState(false);
-  const posterUrl = thumbnailUrl || `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+  const [imgSrc, setImgSrc] = useState(
+    thumbnailUrl || `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`
+  );
+
+  useEffect(() => {
+    setImgSrc(
+      thumbnailUrl || `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`
+    );
+  }, [videoId, thumbnailUrl]);
 
   return (
     <div
       className={cn(
-        "relative w-full aspect-video lg:aspect-[4/3] rounded-[24px] overflow-hidden shadow-2xl bg-slate-900 border border-slate-200/80 group transition-shadow duration-300",
+        "relative w-full aspect-video rounded-[24px] overflow-hidden shadow-2xl bg-slate-900 border border-slate-200/80 group transition-shadow duration-300",
         className
       )}
     >
@@ -40,11 +48,16 @@ export function YouTubeFacade({
         <>
           {/* Lazy loaded thumbnail image */}
           <img
-            src={posterUrl}
+            src={imgSrc}
             alt={title}
             loading="lazy"
-            width={880}
-            height={660}
+            width={1280}
+            height={720}
+            onError={() => {
+              if (imgSrc.includes("maxresdefault")) {
+                setImgSrc(`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`);
+              }
+            }}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-103"
           />
 

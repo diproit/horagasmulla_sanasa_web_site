@@ -52,9 +52,9 @@ export const siteConfig: SiteConfig = {
   credit: "Site by RAJIDA © 2026",
   copyright: "© 2026 Dodangoda Horagasmulla SANASA. All Rights Reserved.",
   introVideo: {
-    videoId: "CERU8swEdqw",
+    videoId: "PzTpCsgU9kw",
     title: "Dodangoda Horagasmulla SANASA – Introduction video",
-    embedUrl: "https://www.youtube-nocookie.com/embed/CERU8swEdqw",
+    embedUrl: "https://www.youtube-nocookie.com/embed/PzTpCsgU9kw",
   },
   navigation: [
     { label: "Home", href: "/" },
