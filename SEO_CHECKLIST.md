@@ -8,7 +8,7 @@
 | Page | URL Path | Page Title (50–65 chars) | Meta Description (140–160 chars) | Primary H1 | Primary Keyword |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Home** | `/` | `Dodangoda Horagasmulla SANASA Society Ltd — Trusted Cooperative Banking since 1965` (76 chars) | `Dodangoda Horagasmulla SANASA Society Ltd offers secure savings, agricultural and microfinance loans, and community welfare projects in Dodangoda since 1965.` (158 chars) | `Your Trusted Cooperative Banking Partner in Dodangoda` | `Sanasa Bank` |
-| **About Us** | `/about-us` | `About Us — Dodangoda Horagasmulla SANASA Society Ltd` (54 chars) | `Discover Dodangoda Horagasmulla SANASA Society Ltd: 60+ years of cooperative banking, Rs. 400 Million assets, 750+ members, 7 trophies in cricket, netball, volleyball and drama, and modern facilities.` (189 chars) | `About Us` | `cooperative bank legacy` |
+| **About Us** | `/about-us` | `About Us — Dodangoda Horagasmulla SANASA Society Ltd` (54 chars) | `Established on 10 July 1965 with 42 founding members, Dodangoda Horagasmulla SANASA Society Ltd offers cooperative banking and dedicated community service.` (156 chars) | `About Us` | `cooperative bank legacy` |
 | **Our Services** | `/services` | `Savings Accounts, Loans & Welfare Services — Horagasmulla SANASA` (65 chars) | `Horagasmulla SANASA: 11 savings accounts up to 10% p.a. and 11 loan types from 9% to 35% p.a., plus community welfare programs in Dodangoda.` (142 chars) | `Our Services` | `savings account Dodangoda` |
 | **Membership** | `/membership` | `Membership — Dodangoda Horagasmulla SANASA Society Ltd` (55 chars) | `Join Horagasmulla SANASA: access welfare & financial benefits including emergency assistance, loans, education, health support, marriage, and childbirth aid.` (152 chars) | `Membership` | `Sanasa Bank membership` |
 | **Management** | `/management` | `Management — Dodangoda Horagasmulla SANASA Society Ltd` (55 chars) | `Meet the democratically elected Board of Directors and leadership of Horagasmulla SANASA Society Ltd, dedicated to transparency, integrity, and community trust.` (161 chars) | `Management` | `Board of Directors Horagasmulla` |
@@ -57,7 +57,7 @@
 | Page | URL Path (`og:url` / Canonical) | Open Graph Title (`og:title`) | Open Graph Description (`og:description`) |
 | :--- | :--- | :--- | :--- |
 | **Home** | `https://horagasmulla.sanasa.org/` | `Dodangoda Horagasmulla SANASA` | `Dodangoda Horagasmulla SANASA Society Ltd: a trusted cooperative bank serving Dodangoda since 1965 with savings, loans and community welfare programs.` |
-| **About Us** | `https://horagasmulla.sanasa.org/about-us` | `About Us \| Dodangoda Horagasmulla SANASA` | `Discover Dodangoda Horagasmulla SANASA Society Ltd: 60+ years of cooperative banking, Rs. 400 Million assets, 750+ members, 7 trophies in cricket, netball, volleyball and drama, and modern facilities.` |
+| **About Us** | `https://horagasmulla.sanasa.org/about-us` | `About Us \| Dodangoda Horagasmulla SANASA` | `Established on 10 July 1965 with 42 founding members, Dodangoda Horagasmulla SANASA Society Ltd offers cooperative banking and dedicated community service.` |
 | **Our Services** | `https://horagasmulla.sanasa.org/services` | `Savings Accounts, Loans & Welfare Services \| Dodangoda Horagasmulla SANASA` | `Horagasmulla SANASA: 11 savings accounts up to 10% p.a. and 11 loan types from 9% to 35% p.a., plus community welfare programs in Dodangoda.` |
 | **Membership** | `https://horagasmulla.sanasa.org/membership` | `Membership \| Dodangoda Horagasmulla SANASA` | `Join Horagasmulla SANASA: access welfare & financial benefits including emergency assistance, loans, education, health support, marriage, and childbirth aid.` |
 | **Management** | `https://horagasmulla.sanasa.org/management` | `Management \| Dodangoda Horagasmulla SANASA` | `Meet the democratically elected Board of Directors and leadership of Horagasmulla SANASA Society Ltd, dedicated to transparency, integrity, and community trust.` |
@@ -110,9 +110,9 @@ Every inner page links onward to at least two other relevant pages:
 ## 6. Structured Data (Schema.org JSON-LD) Audit
 
 - [x] **Root Layout (`app/layout.tsx`)**:
-  - `Organization`: `@id`, `name`, `url`, `logo`, `telephone`, `email`, `foundingDate: 1965`, `sameAs` (Facebook & YouTube), and `contactPoint`.
+  - `Organization`: `@id`, `name`, `url`, `logo`, `telephone`, `email`, `foundingDate: 1965-07-10`, `sameAs` (Facebook & YouTube), and `contactPoint`.
   - `WebSite`: `@id`, `url`, `name`, `publisher: #organization`, `inLanguage: en-LK`.
-  - `BankOrCreditUnion`: `@id`, `name`, `address` (PostalAddress, LK, Dodangoda), `geo`, `telephone` (+94 format), `openingHoursSpecification` (Tue-Sun 08:30-15:00), `foundingDate: 1965`.
+  - `BankOrCreditUnion`: `@id`, `name`, `address` (PostalAddress, LK, Dodangoda), `geo`, `telephone` (+94 format), `openingHoursSpecification` (Tue-Sun 08:30-15:00), `foundingDate: 1965-07-10`.
 - [x] **Home (`app/page.tsx`)**:
   - `BankOrCreditUnion` schema.
 - [x] **All 5 Inner Pages (`app/*/page.tsx`)**:
