@@ -24,7 +24,7 @@ export function getOrganizationSchema(baseUrl: string = BASE_SITE_URL): Record<s
     logo: `${baseUrl}/images/sanasa-logo.svg`,
     email: "sanasa.hor@gmail.com",
     telephone: ["+94706400288", "+94342285061"],
-    foundingDate: "1965",
+    foundingDate: "1965-07-10",
     sameAs: [
       "https://www.facebook.com/share/1FfbYzc2ot/",
       "https://youtube.com/@sanasatv?si=htc9BXE5Sju3PEbm",
@@ -84,7 +84,7 @@ export function getBankOrCreditUnionSchema(
     image: `${baseUrl}/images/og-image.png`,
     telephone: ["+94706400288", "+94342285061"],
     email: "sanasa.hor@gmail.com",
-    foundingDate: "1965",
+    foundingDate: "1965-07-10",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Horagasmulla",

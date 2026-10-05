@@ -11,7 +11,7 @@ import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { PageBanner } from "@/components/sections/PageBanner";
-import { Timeline } from "@/components/sections/Timeline";
+import { MilestoneTimeline } from "@/components/sections/MilestoneTimeline";
 import { PhotoCardGrid, type PhotoCardItem } from "@/components/sections/PhotoCard";
 import { AwardCard } from "@/components/sections/AwardCard";
 import { aboutContent } from "@/content/about";
@@ -26,7 +26,7 @@ import { getBreadcrumbSchema } from "@/lib/schema";
 export const metadata = buildMetadata({
   title: "About Us",
   description:
-    "Discover Dodangoda Horagasmulla SANASA Society Ltd: 60+ years of cooperative banking, Rs. 400 Million assets, 750+ members, 7 trophies in cricket, netball, volleyball and drama, and modern facilities.",
+    "Established on 10 July 1965 with 42 founding members, Dodangoda Horagasmulla SANASA Society Ltd offers cooperative banking and dedicated community service.",
   path: "/about-us",
   keywords: [
     "About Sanasa Bank",
@@ -165,8 +165,7 @@ export default function AboutUsPage() {
       {/* =========================================================================
           3. HISTORICAL MILESTONES (id="milestones", Background: Surface / Light Blue)
           Sub-text: "Our journey through years of dedicated community service"
-          Timeline with four entries: Establishment (1965), Cooperative Registration,
-          Computerization, Modernization. Only the first has the year 1965.
+          Milestone timeline with 22 entries supplied by the Society.
           ========================================================================= */}
       <Section
         id="milestones"
@@ -183,7 +182,7 @@ export default function AboutUsPage() {
             className="mb-10 sm:mb-14"
           />
 
-          <Timeline items={milestones.items} />
+          <MilestoneTimeline items={milestones.items} />
         </Container>
       </Section>
 
